@@ -1,6 +1,6 @@
 # Lab_A01_group_3
 
-## GROUP MEMBERS:
+## GROUP MEMBERS
 ##### HASSAN ALHUJHOJ
 ##### ABDULLAH NAEEM
 ##### JIN KIM
