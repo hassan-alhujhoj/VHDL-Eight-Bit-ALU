@@ -11,7 +11,7 @@ architecture Behavioral of MS_D_Flip_Flop_With_Asynchronous_Reset is
 begin
 	process(D, Clk)
 		begin
-			if(Reset = '0') then
+			if(Reset = '1') then
 				Q <= '0';
 			elsif(Clk'event and Clk = '0') then
 				Q <= D;
