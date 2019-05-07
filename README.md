@@ -1,7 +1,7 @@
-# Lab_A01_group_3
+# ENEL373 - The ALU project
 
 ## Contributers
-> - Hassan Ali Alhujhoj
+> - Hassan Alhujhoj
 > - Abdullah Naeem 
 > - Jin Kim
 
