@@ -1,4 +1,4 @@
-# ENEL373 - The ALU project
+# ENEL373 - The ALU + FSM + REG project
 
 ## Contributers
 > - Hassan Alhujhoj
