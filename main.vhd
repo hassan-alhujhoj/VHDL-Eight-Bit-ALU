@@ -29,35 +29,12 @@ ARCHITECTURE BEHAVIOUR OF main is
 			clk	: in STD_LOGIC;
 			FSMout		: out STD_LOGIC);
 	end component;
-
-	component upButton is
-		port(buttonU: in STD_LOGIC;
-			opcode: out STD_LOGIC_VECTOR(1 downto 0));
-	end component;
-	
-		component rightButton is
-		port(buttonR: in STD_LOGIC;
-			opcode: out STD_LOGIC_VECTOR(1 downto 0));
-	end component;
-	
-		component downButton is
-		port(buttonD: in STD_LOGIC;
-			opcode: out STD_LOGIC_VECTOR(1 downto 0));
-	end component;
-	
-		component leftButton is
-		port(buttonL: in STD_LOGIC;
-			opcode: out STD_LOGIC_VECTOR(1 downto 0));
-	end component;
 	
 	signal reg0 : STD_LOGIC_VECTOR(7 downto 0);
 	signal reg1 : STD_LOGIC_VECTOR(7 downto 0);
 	signal opcode : STD_LOGIC_VECTOR(1 downto 0);
 
 	BEGIN
-		process
-			begin
-		end process;
 		
 		U1: FSM
 			port map (A => reg0, B => reg1, C => opcode, buttonC => BTNC , clk => CLK100MHZ);
