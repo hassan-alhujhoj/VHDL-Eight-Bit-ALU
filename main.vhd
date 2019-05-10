@@ -9,7 +9,6 @@ ENTITY main IS
 		SW 								: in STD_LOGIC_VECTOR(15 downto 0);
 		LED 							: in STD_LOGIC_VECTOR(15 downto 0);
 		BTNC, BTNU, BTND, BTNR, BTNL 	: in STD_LOGIC;
-		opcode							: in STD_LOGIC_VECTOR(2 downto 0);
 		dataBus 						: in STD_LOGIC_VECTOR(7 downto 0);
 		output 							: out STD_LOGIC_VECTOR(7 downto 0));
 END main;
@@ -17,16 +16,17 @@ END main;
 ARCHITECTURE BEHAVIOUR OF main is
 
     component ALU is
-	   port(operation : in std_logic_vector (1 downto 0);
-			A, B 	: in std_logic_vector(7 downto 0);
-			result 	: out std_logic_vector(7 downto 0));
+	port (buttonU, buttonD, buttonL, buttonR : in std_logic;
+            clk     : in std_logic;
+            A, B     : in std_logic_vector(7 downto 0);
+            result     : out std_logic_vector(7 downto 0));
 	end component;
 
 	component FSM is 
 		port(A, B		: in STD_LOGIC_VECTOR(7 downto 0);
 			C			: in STD_LOGIC_VECTOR(1 downto 0);
 			buttonC		: in STD_LOGIC;
-			reset, clk	: in STD_LOGIC;
+			clk	: in STD_LOGIC;
 			FSMout		: out STD_LOGIC);
 	end component;
 
@@ -55,15 +55,12 @@ ARCHITECTURE BEHAVIOUR OF main is
 	signal opcode : STD_LOGIC_VECTOR(1 downto 0);
 
 	BEGIN
-		process()
+		process
 			begin
 		end process;
 		
 		U1: FSM
-			port map (reg0 => A, reg1 => B, opcode => C, BTNC => buttonC, CLK100MHZ => clk);
+			port map (A => reg0, B => reg1, C => opcode, buttonC => BTNC , clk => CLK100MHZ);
         U2: ALU
-            port map (operation => opcode, reg0 => A, reg1 => B);
-        U1: FSM
-            port map (reg0 => A, reg1 => B, opcode => C, BTNC => buttonC, CLK100MHZ => clk);
-		
+            port map (buttonU => BTNU, buttonD => BTND, buttonL => BTNL, buttonR => BTNR, clk => CLK100MHZ,  A => reg0, B => reg1);	
 END BEHAVIOUR;
