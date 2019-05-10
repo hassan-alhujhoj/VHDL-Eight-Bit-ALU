@@ -2,15 +2,15 @@ library ieee;
 use ieee.std_logic_1164.all;
 
 
-entity Reg_8_Bit_With_Enable is
+entity operandG is
 	generic (n 	: integer := 8);
 	
 	port(D 		: in std_logic_vector(n-1 downto 0);
 		Clk, En : in std_logic;
 		Q 		: out std_logic_vector(n-1 downto 0));
-end Reg_8_Bit_With_Enable;
+end operandG;
 
-architecture behaviour of Reg_8_Bit_With_Enable is
+architecture behaviour of operandG is
 	begin
 	process(Clk)
 		begin

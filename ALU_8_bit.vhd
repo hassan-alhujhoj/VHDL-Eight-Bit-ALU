@@ -16,16 +16,16 @@ architecture Behav of ALU_8_bit is
 		acc : process (clk, buttonU, buttonD, buttonL, buttonR, A, B) is
 			begin
 			    if rising_edge(clk) then
-                    if (rising_edge(buttonU)) then
+                    if (buttonU = '1') then
                         operation <= "00";
                     end if;
-                    if (rising_edge(buttonR)) then
+                    if (buttonR  = '1') then
                         operation <= "10";
                     end if;
-                    if (rising_edge(buttonD)) then
+                    if (buttonD  = '1') then
                         operation <= "01";
                     end if;
-                    if (rising_edge(buttonL)) then
+                    if (buttonL  = '1') then
                         operation <= "11";
                     end if;
 				case operation is
