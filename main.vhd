@@ -14,10 +14,10 @@ ENTITY main IS
 		output 							: out STD_LOGIC_VECTOR(7 downto 0));
 END main;
 
-ARCHITECTURE BEHAVIOUR OF main 
+ARCHITECTURE BEHAVIOUR OF main is
 
-	component ALU is 
-	   port (operation : in std_logic_vector (1 downto 0);
+    component ALU is
+	   port(operation : in std_logic_vector (1 downto 0);
 			A, B 	: in std_logic_vector(7 downto 0);
 			result 	: out std_logic_vector(7 downto 0));
 	end component;
@@ -61,5 +61,9 @@ ARCHITECTURE BEHAVIOUR OF main
 		
 		U1: FSM
 			port map (reg0 => A, reg1 => B, opcode => C, BTNC => buttonC, CLK100MHZ => clk);
+        U2: ALU
+            port map (operation => opcode, reg0 => A, reg1 => B);
+        U1: FSM
+            port map (reg0 => A, reg1 => B, opcode => C, BTNC => buttonC, CLK100MHZ => clk);
 		
 END BEHAVIOUR;
