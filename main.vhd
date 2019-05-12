@@ -8,24 +8,18 @@ ENTITY main IS
     PORT(CLK100MHZ						: in STD_LOGIC;
 		SW 								: in STD_LOGIC_VECTOR(7 downto 0);
 		BTNC, BTNU, BTND, BTNR, BTNL 	: in STD_LOGIC;
-		JA                              : out std_logic_VECTOR(4 downto 1);
         LED16_B                         : out std_logic;
+        LED16_G                         : out std_logic;
 		CA, CB, CC, CD, CE, CF, CG      : out STD_LOGIC;
+		AN                              : out STD_LOGIC_VECTOR(7 downto 0); 
 		LED 							: out STD_LOGIC_VECTOR(7 downto 0));
 END main;
 
 ARCHITECTURE BEHAVIOUR OF main is
 
     component seg7 is
-        Port (bcd : in STD_LOGIC_VECTOR (3 downto 0);
-               CA : out STD_LOGIC;
-               CB : out STD_LOGIC;
-               CC : out STD_LOGIC;
-               CD : out STD_LOGIC;
-               CE : out STD_LOGIC;
-               CF : out STD_LOGIC;
-               CG : out STD_LOGIC;
-               Anode : out STD_LOGIC_VECTOR(7 downto 0));
+        Port (bcd       : in STD_LOGIC_VECTOR (3 downto 0);
+              seg7_out    : out STD_LOGIC_VECTOR(6 downto 0));
     end component;
     
     component ALU_8_bit is
@@ -73,9 +67,21 @@ ARCHITECTURE BEHAVIOUR OF main is
     
     component clkDiv100to1 is 
 	port(clk_in : in std_logic;
-         clk_out   : out std_logic;
-         JA : out std_logic_VECTOR(4 downto 1) := "0000";
-         LED16_B  : out std_logic);
+         clk_out   : out std_logic);
+    end component;
+    
+    component seg7_mux is
+        port(clk		: in std_logic;
+            digit1        : in std_logic_vector(6 downto 0);
+            digit2        : in std_logic_vector(6 downto 0);
+            digit3        : in std_logic_vector(6 downto 0);
+            anode        : out std_logic_vector(7 downto 0);
+            cathode_out    : out std_logic_vector(6 downto 0));
+    end component;
+    
+    component clkDiv100to500 is 
+        port(clk_in : in std_logic;
+             clk_out   : out std_logic);
     end component;
 	
 	signal regA_in_wire : STD_LOGIC_VECTOR(7 downto 0);
@@ -87,6 +93,9 @@ ARCHITECTURE BEHAVIOUR OF main is
 	signal bin_to_bcd_wire : STD_LOGIC_VECTOR(11 downto 0);
 	signal anode : STD_LOGIC_VECTOR(7 downto 0);
 	signal clkDiv_out_wire : STD_LOGIC;
+	signal seg7_mux_wire1 : STD_LOGIC_VECTOR(6 downto 0);
+	signal seg7_mux_wire2 : STD_LOGIC_VECTOR(6 downto 0);
+	signal seg7_mux_wire3 : STD_LOGIC_VECTOR(6 downto 0);
 
 	BEGIN
 		
@@ -101,16 +110,19 @@ ARCHITECTURE BEHAVIOUR OF main is
         U5: regG
             port map(D => regG_in_wire, Clk => CLK100MHZ, Q => regG_out_wire);
         U6: BIN2BCD
-            port map(BINARY => regG_out_wire, BCD => bin_to_bcd_wire);
+            port map(BINARY => regA_out_wire, BCD => bin_to_bcd_wire);
         U7: seg7
-            port map(bcd => bin_to_bcd_wire(3 downto 0), CA => CA, CB => CB, CC => CC, CD => CD, CE => CE, CF => CF, CG => CG);
+            port map(bcd => bin_to_bcd_wire(3 downto 0), seg7_out => seg7_mux_wire1);
         U8: seg7
-            port map(bcd => bin_to_bcd_wire(7 downto 4));
+            port map(bcd => bin_to_bcd_wire(7 downto 4), seg7_out => seg7_mux_wire2);
         U9: seg7
-            port map(bcd => bin_to_bcd_wire(11 downto 8));
+            port map(bcd => bin_to_bcd_wire(11 downto 8), seg7_out => seg7_mux_wire3);
         U10: led_out
-            port map (led_in => regG_in_wire, clk => CLK100MHZ);
+            port map (led_in => regG_in_wire, clk => CLK100MHZ, output => LED);
         U11: clkDiv100to1
             port map(clk_in => CLK100MHZ, clk_out => LED16_B);
-
+        U12: seg7_mux
+            port map (clk => CLK100MHZ, digit1 => seg7_mux_wire1, digit2 => seg7_mux_wire2, digit3 => seg7_mux_wire3, anode => AN, cathode_out(6) => CA, cathode_out(5) => CB, cathode_out(4) => CC, cathode_out(3) => CD, cathode_out(2) => CE, cathode_out(1) => CF, cathode_out(0) => CG);
+        U13: clkDiv100to500
+            port map (clk_in => CLK100MHZ, clk_out => LED16_G);
 END BEHAVIOUR;
