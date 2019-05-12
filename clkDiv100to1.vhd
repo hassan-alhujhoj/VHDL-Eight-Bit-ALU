@@ -18,7 +18,7 @@ architecture behaviour of clkDiv100to1 is
 begin								-- generates a 1Hz clk_out from a 100MHz clk_in.
 	process(clk_in)
 		begin
-			if rising_edge(clk_in) then
+			 if (clk_in'event and clk_in = '1') then
 				count <= count + 1;
 				if(count = 50000000) then           -- if counter == 50,000,000
 					clock_out <= not clock_out;     --  toggle clock
@@ -27,6 +27,4 @@ begin								-- generates a 1Hz clk_out from a 100MHz clk_in.
 			end if;
 	end process;
 	clk_out <= clock_out;
-	JA(1) <= clock_out;       --JA(1) <= CLK100MHZ;  -- This is to test out the clk_out PWM signal form pin JA(1) PORT JA
-	LED16_B <= clock_out;
 end behaviour;

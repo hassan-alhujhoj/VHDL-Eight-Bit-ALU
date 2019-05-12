@@ -4,29 +4,29 @@ use IEEE.STD_LOGIC_ARITH.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 entity ALU_8_bit is
-        port(alu_in : in std_logic_vector(1 downto 0);
-            clk     : in std_logic;
-            A, B 	: in std_logic_vector(7 downto 0);
-			result 	: out std_logic_vector(7 downto 0));
+    port(buttonU, buttonD, buttonR, buttonL     : in STD_LOGIC;
+        clk                                     : in std_logic;
+        A, B                                    : in std_logic_vector(7 downto 0);
+        result                                  : out std_logic_vector(7 downto 0));
 end ALU_8_bit;
 
 architecture Behav of ALU_8_bit is
 	begin
-		acc : process (clk, alu_in, A, B) is    
+		acc : process (clk, buttonU, buttonD, buttonR, buttonL, A, B) is    
 		variable operation : std_logic_vector(1 downto 0);
-
+        variable counter : INTEGER := 0;
 			begin
-			    if rising_edge(clk) then
-                    if (alu_in = "00") then
+			    if (clk'event and clk = '1') then
+                    if (buttonU = '1') then
                         operation := "00";
                     end if;
-                    if (alu_in  = "01") then
-                        operation := "01";
-                    end if;
-                    if (alu_in  = "10") then
+                    if (buttonR  = '1') then
                         operation := "10";
                     end if;
-                    if (alu_in  = "11") then
+                    if (buttonD  = '1') then
+                        operation := "01";
+                    end if;
+                    if (buttonL  = '1') then
                         operation := "11";
                     end if;
                     case operation is

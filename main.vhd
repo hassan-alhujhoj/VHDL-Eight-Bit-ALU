@@ -8,7 +8,8 @@ ENTITY main IS
     PORT(CLK100MHZ						: in STD_LOGIC;
 		SW 								: in STD_LOGIC_VECTOR(7 downto 0);
 		BTNC, BTNU, BTND, BTNR, BTNL 	: in STD_LOGIC;
-		reset                           : in STD_LOGIC;
+		JA                              : out std_logic_VECTOR(4 downto 1);
+        LED16_B                         : out std_logic;
 		CA, CB, CC, CD, CE, CF, CG      : out STD_LOGIC;
 		LED 							: out STD_LOGIC_VECTOR(7 downto 0));
 END main;
@@ -28,34 +29,34 @@ ARCHITECTURE BEHAVIOUR OF main is
     end component;
     
     component ALU_8_bit is
-        port (alu_in : in std_logic_vector(1 downto 0);
-            clk     : in std_logic;
-            A, B     : in std_logic_vector(7 downto 0);
-            result     : out std_logic_vector(7 downto 0));
+        port(buttonU, buttonD, buttonR, buttonL   : in STD_LOGIC;
+            clk                       : in std_logic;
+            A, B                      : in std_logic_vector(7 downto 0);
+            result                    : out std_logic_vector(7 downto 0));
 	end component;
 
 	component FSM is 
         port(A, B                 : in STD_LOGIC_VECTOR(7 downto 0);
             buttonC               : in STD_LOGIC;
-            reset, clk            : in STD_LOGIC;
+            clk                   : in STD_LOGIC;
             operandA, operandB    : out STD_LOGIC_VECTOR(7 downto 0));
 	end component;
 	
 	component regA is
 	   	port(D 		: in std_logic_vector(7 downto 0);
-            Clk, En : in std_logic;
+            Clk  : in std_logic;
             Q         : out std_logic_vector(7 downto 0));
     end component;
     
     component regB is
         port(D         : in std_logic_vector(7 downto 0);
-            Clk, En : in std_logic;
+            Clk : in std_logic;
             Q         : out std_logic_vector(7 downto 0));
     end component;
     
     component regG is
         port(D         : in std_logic_vector(7 downto 0);
-            Clk, En : in std_logic;
+            Clk : in std_logic;
             Q         : out std_logic_vector(7 downto 0));
     end component;
     
@@ -90,26 +91,26 @@ ARCHITECTURE BEHAVIOUR OF main is
 	BEGIN
 		
 		U1: FSM
-			port map (A => SW, B => SW, buttonC => BTNC ,reset => reset, clk => CLK100MHZ, operandA => regA_in_wire, operandB => regB_in_wire);
+			port map (A => SW, B => SW, buttonC => BTNC, clk => CLK100MHZ, operandA => regA_in_wire, operandB => regB_in_wire);
         U2: ALU_8_bit
-            port map (alu_in => SW(1 downto 0), clk => CLK100MHZ,  A => regA_out_wire, B => regB_out_wire, result => regG_in_wire);
+            port map (buttonU => BTNU, buttonD => BTND, buttonL => BTNL, buttonR => BTNR, clk => CLK100MHZ,  A => regA_out_wire, B => regB_out_wire, result => regG_in_wire);
         U3: regA
-            port map(D => regA_in_wire, Clk => CLK100MHZ, En => '0', Q => regA_out_wire);
+            port map(D => regA_in_wire, Clk => CLK100MHZ, Q => regA_out_wire);
         U4: regB
-            port map(D => regB_in_wire, Clk => CLK100MHZ, En => '0', Q => regB_out_wire);
+            port map(D => regB_in_wire, Clk => CLK100MHZ, Q => regB_out_wire);
         U5: regG
-            port map(D => regG_in_wire, Clk => CLK100MHZ, En => clkDiv_out_wire, Q => regG_out_wire);
+            port map(D => regG_in_wire, Clk => CLK100MHZ, Q => regG_out_wire);
         U6: BIN2BCD
-            port map(BINARY =>  regG_out_wire, BCD => bin_to_bcd_wire);
+            port map(BINARY => regG_out_wire, BCD => bin_to_bcd_wire);
         U7: seg7
             port map(bcd => bin_to_bcd_wire(3 downto 0), CA => CA, CB => CB, CC => CC, CD => CD, CE => CE, CF => CF, CG => CG);
         U8: seg7
-            port map(bcd => bin_to_bcd_wire(7 downto 4), CA => CA, CB => CB, CC => CC, CD => CD, CE => CE, CF => CF, CG => CG);
+            port map(bcd => bin_to_bcd_wire(7 downto 4));
         U9: seg7
-            port map(bcd => bin_to_bcd_wire(11 downto 8), CA => CA, CB => CB, CC => CC, CD => CD, CE => CE, CF => CF, CG => CG);
+            port map(bcd => bin_to_bcd_wire(11 downto 8));
         U10: led_out
-            port map (led_in => regG_in_wire, clk => CLK100MHZ, output => LED);
+            port map (led_in => regG_in_wire, clk => CLK100MHZ);
         U11: clkDiv100to1
-            port map(clk_in => CLK100MHZ, clk_out => clkDiv_out_wire);
+            port map(clk_in => CLK100MHZ, clk_out => LED16_B);
 
 END BEHAVIOUR;
