@@ -28,12 +28,12 @@ architecture Behav of ALU_8_bit is
                     if (buttonL  = '1') then
                         operation <= "11";
                     end if;
-				case operation is
-					when "00" => result <= A + B;
-					when "01" => result <= A - B;
-					when "10" => result <= A AND B;
-					when others => result <= A OR B;
-				end case;
+                    case operation is
+                        when "00" => result <= A + B;
+                        when "01" => result <= A - B;
+                        when "10" => result <= A AND B;
+                        when others => result <= A OR B;
+                    end case;
 				end if;
 		end process acc;
 end Behav;

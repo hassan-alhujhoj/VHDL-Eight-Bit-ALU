@@ -2,15 +2,15 @@ library ieee;
 use ieee.std_logic_1164.all;
 
 
-entity operandA is
+entity regA is
 	generic (n 	: integer := 8);
 	
 	port(D 		: in std_logic_vector(n-1 downto 0);
 		Clk, En : in std_logic;
 		Q 		: out std_logic_vector(n-1 downto 0));
-end operandA;
+end regA;
 
-architecture behaviour of operandA is
+architecture behaviour of regA is
 	begin
 	process(Clk)
 		begin
