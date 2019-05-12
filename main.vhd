@@ -111,7 +111,7 @@ ARCHITECTURE BEHAVIOUR OF main is
         U5: regG
             port map(D => regG_in_wire, Clk => CLK100MHZ, Q => regG_out_wire);
         U6: BIN2BCD
-            port map(BINARY => regA_out_wire, BCD => bin_to_bcd_wire);
+            port map(BINARY => regG_out_wire, BCD => bin_to_bcd_wire);
         U7: seg7
             port map(bcd => bin_to_bcd_wire(3 downto 0), seg7_out => seg7_mux_wire1);
         U8: seg7
