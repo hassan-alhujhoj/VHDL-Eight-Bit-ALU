@@ -94,9 +94,9 @@ ARCHITECTURE BEHAVIOUR OF main is
         U2: ALU_8_bit
             port map (buttonU => BTNU, buttonD => BTND, buttonL => BTNL, buttonR => BTNR, clk => CLK100MHZ,  A => regA_out_wire, B => regB_out_wire, result => regG_in_wire);
         U3: regA
-            port map(D => regA_in_wire, Clk => CLK100MHZ, En => clkDiv_out_wire, Q => regA_out_wire);
+            port map(D => regA_in_wire, Clk => CLK100MHZ, En => '0', Q => regA_out_wire);
         U4: regB
-            port map(D => regB_in_wire, Clk => CLK100MHZ, En => clkDiv_out_wire, Q => regB_out_wire);
+            port map(D => regB_in_wire, Clk => CLK100MHZ, En => '0', Q => regB_out_wire);
         U5: regG
             port map(D => regG_in_wire, Clk => CLK100MHZ, En => clkDiv_out_wire, Q => regG_out_wire);
         U6: BIN2BCD
