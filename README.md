@@ -13,6 +13,7 @@ The objective of this project is to design an alu component that can add, subtra
 - reset
 
 > #### ALU inputs
+- BTNU, BTND, BTNL, BTNR
 - opreand A
 - operand B
 - opcode
