@@ -28,10 +28,10 @@ ARCHITECTURE BEHAVIOUR OF main is
     end component;
     
     component ALU_8_bit is
-        port (buttonU, buttonD, buttonL, buttonR : in std_logic;
-                clk     : in std_logic;
-                A, B     : in std_logic_vector(7 downto 0);
-                result     : out std_logic_vector(7 downto 0));
+        port (alu_in : in std_logic_vector(1 downto 0);
+            clk     : in std_logic;
+            A, B     : in std_logic_vector(7 downto 0);
+            result     : out std_logic_vector(7 downto 0));
 	end component;
 
 	component FSM is 
@@ -65,7 +65,7 @@ ARCHITECTURE BEHAVIOUR OF main is
     end component;
     
 	component led_out is 
-	   port(alu_out : in std_logic_vector(7 downto 0);
+	   port(led_in : in std_logic_vector(7 downto 0);
             clk     : in std_logic;
             output  : out std_logic_vector(7 downto 0));
     end component;
@@ -92,7 +92,7 @@ ARCHITECTURE BEHAVIOUR OF main is
 		U1: FSM
 			port map (A => SW, B => SW, buttonC => BTNC ,reset => reset, clk => CLK100MHZ, operandA => regA_in_wire, operandB => regB_in_wire);
         U2: ALU_8_bit
-            port map (buttonU => BTNU, buttonD => BTND, buttonL => BTNL, buttonR => BTNR, clk => CLK100MHZ,  A => regA_out_wire, B => regB_out_wire, result => regG_in_wire);
+            port map (alu_in => SW(1 downto 0), clk => CLK100MHZ,  A => regA_out_wire, B => regB_out_wire, result => regG_in_wire);
         U3: regA
             port map(D => regA_in_wire, Clk => CLK100MHZ, En => '0', Q => regA_out_wire);
         U4: regB
@@ -108,7 +108,7 @@ ARCHITECTURE BEHAVIOUR OF main is
         U9: seg7
             port map(bcd => bin_to_bcd_wire(11 downto 8), CA => CA, CB => CB, CC => CC, CD => CD, CE => CE, CF => CF, CG => CG);
         U10: led_out
-            port map (alu_out => regG_in_wire, clk => CLK100MHZ, output => LED);
+            port map (led_in => regG_in_wire, clk => CLK100MHZ, output => LED);
         U11: clkDiv100to1
             port map(clk_in => CLK100MHZ, clk_out => clkDiv_out_wire);
 

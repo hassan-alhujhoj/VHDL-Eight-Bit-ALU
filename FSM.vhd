@@ -14,42 +14,37 @@ entity FSM is
 end FSM;
 
 Architecture behaviour of FSM is
-	
-	type state_type is (s0, s1); 	-- two state machine
-	signal current_s, next_s : state_type; 	-- current and next state declaration
-	
+
 	begin
 	
-	process (clk)
-        begin
-            if reset = '1' then
-                current_s <= s0;
-            elsif rising_edge(clk) then
-                current_s <= next_s;
-            end if;
-    end process;
-	
 	--implement the finite state machine
-	process(current_s, A, B)
+	process(A, B)	
+	type state_type is (s0, s1); 	-- two state machine
+	variable current_s, next_s : state_type; 	-- current and next state declaration
 		begin
+		if reset = '1' then
+            current_s := s0;
+		elsif(rising_edge(clk)) then
+            current_s := next_s;
 			case current_s is
 				when s0 => 				-- when current state is "s0"
 					if(buttonC = '0') then
 						operandA <= A;
-						next_s <= s0;	-- only count when buttonC is high
+						next_s := s0;	-- only count when buttonC is high
 					elsif (buttonC = '1') then
 						operandB <= B;
-						next_s <= s1;
+						next_s := s1;
 					end if;
 					
 				when s1 => 				-- when current state is "s1"
 					if(buttonC = '0') then
 						operandB <= B;
-						next_s <= s1;	-- only count when buttonC is high
+						next_s := s1;	-- only count when buttonC is high
 					elsif (buttonC = '1') then
 						operandA <= A;
-						next_s <= s0;
+						next_s := s0;
 					end if;
             end case;
+        end if;
 	end process;
 end behaviour;
