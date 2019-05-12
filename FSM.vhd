@@ -7,7 +7,7 @@ use ieee.std_logic_1164.all;
 entity FSM is
 	port(A, B                 : in STD_LOGIC_VECTOR(7 downto 0);
         buttonC               : in STD_LOGIC;
-		reset, clk                   : in STD_LOGIC;
+        reset, clk            : in STD_LOGIC;
 		operandA, operandB    : out STD_LOGIC_VECTOR(7 downto 0));
 end FSM;
 
@@ -18,7 +18,7 @@ Architecture behaviour of FSM is
 	
 	begin
 	
-	process
+	process (clk)
         begin
             if reset = '1' then
                 current_s <= s0;

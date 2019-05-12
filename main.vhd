@@ -90,9 +90,9 @@ ARCHITECTURE BEHAVIOUR OF main is
         U7: seg7
             port map(bcd => bin_to_bcd_wire(3 downto 0), CA => CA, CB => CB, CC => CC, CD => CD, CE => CE, CF => CF, CG => CG);
         U8: seg7
-            port map(bcd => bin_to_bcd_wire(7 downto 4), CA => CA, CB => CB, CC => CC, CD => CD, CE => CE, CF => CF, CG => CG);
+            port map(bcd => bin_to_bcd_wire(7 downto 4));
         U9: seg7
-            port map(bcd => bin_to_bcd_wire(11 downto 8), CA => CA, CB => CB, CC => CC, CD => CD, CE => CE, CF => CF, CG => CG);
+            port map(bcd => bin_to_bcd_wire(11 downto 8));
             
         LED <= regG_in_wire;
 
