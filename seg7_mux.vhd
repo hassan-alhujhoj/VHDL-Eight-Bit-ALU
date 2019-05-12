@@ -23,26 +23,14 @@ architecture behaviour of seg7_mux is
                         cathode_out <= digit1;
                         anode <= "11111110";
                         counter := counter + 1;
-				    elsif counter = 1 then
-                        cathode_out <= "0000000";
-                        anode <= "11111110";
-                        counter := counter + 1;
-                    elsif counter = 2 then
+                    elsif counter = 1 then
                         cathode_out <= digit2;
                         anode <= "11111101";
                         counter := counter + 1;
-                    elsif counter = 3 then
-                        cathode_out <= "0000000";
-                        anode <= "11111101";
-                        counter := counter + 1;
-                    elsif counter = 4 then
+                    elsif counter = 2 then
                         cathode_out <= digit3;
                         anode <= "11111011";
-                        counter := counter + 1;
-                    elsif counter = 5 then
-                        cathode_out <= "0000000";
-                        anode <= "11111011";
-                        counter := counter -5;
+                        counter := counter - 2;
                     end if;
                 end if;
 		end process;				
