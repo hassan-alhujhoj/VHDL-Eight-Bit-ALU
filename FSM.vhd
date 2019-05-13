@@ -8,13 +8,14 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 -- B = enter the value of registerB, 
 -- opcode = enter the opcode of registerO
 -- Display_mode = output the state of the FSM
+
 entity FSM is
 	port(A, B                 : in STD_LOGIC_VECTOR(7 downto 0);
 	    opcode_in             : in STD_LOGIC_VECTOR(1 downto 0);
         buttonC               : in STD_LOGIC;
         clk                   : in STD_LOGIC;
 		operandA, operandB    : out STD_LOGIC_VECTOR(7 downto 0);
-		opcode_out            : out STD_LOGIC_VECTOR(1 downto 0);
+		operandO              : out STD_LOGIC_VECTOR(1 downto 0);
 		display_Mode          : out STD_LOGIC_VECTOR(1 downto 0));
 end FSM;
 
@@ -23,13 +24,13 @@ Architecture behaviour of FSM is
 	begin
 	
 	--implement the finite state machine
-	process(A, B)	
+	process(A, B, opcode_in, buttonC)	
         variable counter : INTEGER := 0;
         begin
             if clk'event and clk = '1' then
                 if buttonC = '1' then 
                     counter := counter + 1;
-                    if counter = 2 then
+                    if counter = 4 then
                         counter := 0;
                     end if;
                 end if;
@@ -39,6 +40,12 @@ Architecture behaviour of FSM is
                 display_Mode <= "00";
             elsif counter = 1 then
                 operandB <= B;
+                display_Mode <= "01";
+            elsif counter = 2 then
+                operandO <= opcode_in;
+                display_Mode <= "10";
+            elsif counter = 3 then
+                display_Mode <= "11";
             end if;
 	end process;
 end behaviour;
