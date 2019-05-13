@@ -9,7 +9,6 @@ ENTITY main IS
 		SW 								: in STD_LOGIC_VECTOR(7 downto 0);
 		BTNC, BTNU, BTND, BTNR, BTNL 	: in STD_LOGIC;
         LED16_B                         : out std_logic;
-        LED17_G                         : out std_logic;
 		CA, CB, CC, CD, CE, CF, CG      : out STD_LOGIC;
 		AN                              : out STD_LOGIC_VECTOR(7 downto 0); 
 		LED 							: out STD_LOGIC_VECTOR(7 downto 0));
@@ -65,11 +64,6 @@ ARCHITECTURE BEHAVIOUR OF main is
             output  : out std_logic_vector(7 downto 0));
     end component;
     
-    component clkDiv100to1 is 
-	port(clk_in : in std_logic;
-         clk_out   : out std_logic);
-    end component;
-    
     component seg7_mux is
         port(clk		: in std_logic;
             digit1        : in std_logic_vector(6 downto 0);
@@ -77,6 +71,12 @@ ARCHITECTURE BEHAVIOUR OF main is
             digit3        : in std_logic_vector(6 downto 0);
             anode        : out std_logic_vector(7 downto 0);
             cathode_out    : out std_logic_vector(6 downto 0));
+    end component;
+    
+    component debounce is
+        Port(button         : in STD_LOGIC;
+            clk             : in STD_LOGIC;
+            debounce_out    : out STD_LOGIC);
     end component;
     
     component clkDiv100to500 is 
@@ -97,11 +97,13 @@ ARCHITECTURE BEHAVIOUR OF main is
 	signal seg7_mux_wire2 : STD_LOGIC_VECTOR(6 downto 0);
 	signal seg7_mux_wire3 : STD_LOGIC_VECTOR(6 downto 0);
 	signal clkDiv100to500_wire : STD_LOGIC;
+	signal debounce_clk_in_wire : STD_LOGIC;
+	signal debounce_button_out_wire : STD_LOGIC;
 
 	BEGIN
 		
 		U1: FSM
-			port map (A => SW, B => SW, buttonC => BTNC, clk => CLK100MHZ, operandA => regA_in_wire, operandB => regB_in_wire);
+			port map (A => SW, B => SW, buttonC => debounce_button_out_wire, clk => CLK100MHZ, operandA => regA_in_wire, operandB => regB_in_wire);
         U2: ALU_8_bit
             port map (buttonU => BTNU, buttonD => BTND, buttonL => BTNL, buttonR => BTNR, clk => CLK100MHZ,  A => regA_out_wire, B => regB_out_wire, result => regG_in_wire);
         U3: regA
@@ -120,10 +122,12 @@ ARCHITECTURE BEHAVIOUR OF main is
             port map(bcd => bin_to_bcd_wire(11 downto 8), seg7_out => seg7_mux_wire3);
         U10: led_out
             port map (led_in => regG_in_wire, clk => CLK100MHZ, output => LED);
-        U11: clkDiv100to1
-            port map(clk_in => CLK100MHZ, clk_out => LED16_B);
+        U11: clkDiv100to500
+            port map(clk_in => CLK100MHZ, clk_out => debounce_clk_in_wire);
         U12: seg7_mux
             port map (clk => clkDiv100to500_wire, digit1 => seg7_mux_wire1, digit2 => seg7_mux_wire2, digit3 => seg7_mux_wire3, anode => AN, cathode_out(6) => CA, cathode_out(5) => CB, cathode_out(4) => CC, cathode_out(3) => CD, cathode_out(2) => CE, cathode_out(1) => CF, cathode_out(0) => CG);
         U13: clkDiv100to500
             port map (clk_in => CLK100MHZ, clk_out => clkDiv100to500_wire);
+        U14: debounce
+            port map(button => BTNC, clk => debounce_clk_in_wire, debounce_out => debounce_button_out_wire);
 END BEHAVIOUR;

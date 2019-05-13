@@ -19,7 +19,7 @@ begin								-- generates a 1Hz clk_out from a 100MHz clk_in.
 		begin
 			 if (clk_in'event and clk_in = '1') then
 				count <= count + 1;
-				if(count = 100000) then           -- if counter == 50,000,000
+				if(count = 100000) then           -- if counter == 50,000,000 gives 1 Hz. So, if we divide by 50000000 / 500 we git 100000 which gives us a 500hz output.
 					clock_out <= not clock_out;     --  toggle clock
 				    count <= 1;                         --  reset counter
 				end if;
