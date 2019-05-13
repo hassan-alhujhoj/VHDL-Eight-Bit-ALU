@@ -67,10 +67,11 @@ ARCHITECTURE BEHAVIOUR OF main is
     end component;
     
     component display_Mode_Select_Mux is
-        port(regA, regB, regG	: in std_logic_vector(7 downto 0);
-            regO                : in std_logic_vector(1 downto 0);
-            sel                 : in std_logic_vector(1 downto 0);
-            led_out             : out std_logic_vector(7 downto 0));
+	   port(regA, regB, regG	: in std_logic_vector(7 downto 0);
+         regO                : in std_logic_vector(1 downto 0);
+         sel                 : in std_logic_vector(1 downto 0);
+         clk                 : in std_logic;
+         led_out             : out std_logic_vector(7 downto 0));
     end component;
     
     component seg7_mux is
@@ -136,7 +137,7 @@ ARCHITECTURE BEHAVIOUR OF main is
         U10: seg7
             port map(bcd => bin_to_bcd_wire(11 downto 8), seg7_out => seg7_mux_wire3);
         U11: display_Mode_Select_Mux
-            port map (regA => regA_out_wire, regB => regB_out_wire, regG => regG_out_wire, regO => regO_out_wire, sel => fsm_display_mode_out_wire, led_out => LED);
+            port map (regA => regA_out_wire, regB => regB_out_wire, regG => regG_out_wire, regO => regO_out_wire, sel => fsm_display_mode_out_wire, clk => CLK100MHZ, led_out => LED);
         U12: clkDiv100to500
             port map(clk_in => CLK100MHZ, clk_out => debounce_clk_in_wire);
         U13: seg7_mux

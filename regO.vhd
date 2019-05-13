@@ -13,7 +13,7 @@ architecture behaviour of regO is
 	begin
 	process(Clk)
 		begin
-			if rising_edge(Clk) then
+			if Clk'event and Clk = '1' then
 					Q <= D;
             end if;
 	end process;
