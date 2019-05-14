@@ -9,16 +9,18 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 -- opcode = enter the opcode of registerO
 -- Display_mode = output the state of the FSM
 entity FSM is
-	port(buttonC                                : in STD_LOGIC;
-        clk                                     : in STD_LOGIC;
-        enable_A, enable_B, enable_G, enable_O  : out STD_LOGIC;
-		display_Mode                            : out STD_LOGIC_VECTOR(1 downto 0));
+	port(buttonC                                        : in STD_LOGIC;
+    clk                                                 : in STD_LOGIC;
+    enable_A, enable_B, enable_G, enable_O, enable_ALU  : out STD_LOGIC;
+    display_Mode                                        : out STD_LOGIC_VECTOR(1 downto 0);
+    state_1_led_out                                     : out STD_LOGIC;
+    state_2_led_out                                     : out STD_LOGIC;
+    state_3_led_out                                     : out STD_LOGIC;
+    state_4_led_out                                     : out STD_LOGIC);
 end FSM;
 
 Architecture behaviour of FSM is
-
 	begin
-	
 	--implement the finite state machine
 	process(buttonC, clk)	
         variable counter : INTEGER := 0;
@@ -54,6 +56,7 @@ Architecture behaviour of FSM is
                 enable_B <= '0';
                 enable_O <= '0';
                 enable_G <= '1';
+                enable_ALU <= '1';
                 display_Mode <= "11";
             end if;
 	end process;
