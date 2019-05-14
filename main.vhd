@@ -28,37 +28,38 @@ ARCHITECTURE BEHAVIOUR OF main is
 	end component;
 
 	component FSM is 
-        port(A, B                 : in STD_LOGIC_VECTOR(7 downto 0);
-            opcode_in             : in STD_LOGIC_VECTOR(1 downto 0);
-            buttonC               : in STD_LOGIC;
-            clk                   : in STD_LOGIC;
-            operandA, operandB    : out STD_LOGIC_VECTOR(7 downto 0);
-            operandO              : out STD_LOGIC_VECTOR(1 downto 0);
-            display_Mode          : out STD_LOGIC_VECTOR(1 downto 0));
+        port(buttonC                                : in STD_LOGIC;
+            clk                                     : in STD_LOGIC;
+            enable_A, enable_B, enable_G, enable_O  : out STD_LOGIC;
+            display_Mode                            : out STD_LOGIC_VECTOR(1 downto 0));
 	end component;
 	
 	component regA is
-	   	port(D 		: in std_logic_vector(7 downto 0);
-            Clk  : in std_logic;
-            Q         : out std_logic_vector(7 downto 0));
+        port(D 		  : in std_logic_vector(7 downto 0);
+            Clk       : in std_logic;
+            enable    : in std_logic;
+            Q           : out std_logic_vector(7 downto 0));
     end component;
     
     component regB is
-        port(D         : in std_logic_vector(7 downto 0);
-            Clk : in std_logic;
-            Q         : out std_logic_vector(7 downto 0));
+        port(D 		  : in std_logic_vector(7 downto 0);
+        Clk       : in std_logic;
+        enable    : in std_logic;
+        Q           : out std_logic_vector(7 downto 0));
     end component;
     
     component regG is
-        port(D         : in std_logic_vector(7 downto 0);
-            Clk : in std_logic;
-            Q         : out std_logic_vector(7 downto 0));
+        port(D 		  : in std_logic_vector(7 downto 0);
+        Clk       : in std_logic;
+        enable    : in std_logic;
+        Q           : out std_logic_vector(7 downto 0));
     end component;
     
     component regO is
-        port(D         : in std_logic_vector(1 downto 0);
-            Clk : in std_logic;
-            Q         : out std_logic_vector(1 downto 0));
+        port(D 		  : in std_logic_vector(1 downto 0);
+        Clk       : in std_logic;
+        enable    : in std_logic;
+        Q           : out std_logic_vector(1 downto 0));
     end component;
     
     component BIN2BCD is
@@ -70,7 +71,6 @@ ARCHITECTURE BEHAVIOUR OF main is
 	   port(regA, regB, regG	: in std_logic_vector(7 downto 0);
          regO                : in std_logic_vector(1 downto 0);
          sel                 : in std_logic_vector(1 downto 0);
-         clk                 : in std_logic;
          led_out             : out std_logic_vector(7 downto 0));
     end component;
     
@@ -95,7 +95,11 @@ ARCHITECTURE BEHAVIOUR OF main is
     end component;
 	
 	signal fsm_opcode_out_wire : STD_LOGIC_VECTOR(1 downto 0);
-	signal fsm_display_mode_out_wire : STD_LOGIC_VECTOR(1 downto 0);
+	signal fsm_display_mode_out_wire : STD_LOGIC_VECTOR(1 downto 0);	
+	signal fsm_enableA_out_wire : STD_LOGIC;
+	signal fsm_enableB_out_wire : STD_LOGIC;
+	signal fsm_enableG_out_wire : STD_LOGIC;
+	signal fsm_enableO_out_wire : STD_LOGIC;
 	signal regA_in_wire : STD_LOGIC_VECTOR(7 downto 0);
 	signal regB_in_wire : STD_LOGIC_VECTOR(7 downto 0);
     signal regA_out_wire : STD_LOGIC_VECTOR(7 downto 0);
@@ -106,7 +110,6 @@ ARCHITECTURE BEHAVIOUR OF main is
 	signal regO_out_wire : STD_LOGIC_VECTOR(1 downto 0);
 	signal bin_to_bcd_wire : STD_LOGIC_VECTOR(11 downto 0);
 	signal anode : STD_LOGIC_VECTOR(7 downto 0);
-	signal clkDiv_out_wire : STD_LOGIC;
 	signal seg7_mux_wire1 : STD_LOGIC_VECTOR(6 downto 0);
 	signal seg7_mux_wire2 : STD_LOGIC_VECTOR(6 downto 0);
 	signal seg7_mux_wire3 : STD_LOGIC_VECTOR(6 downto 0);
@@ -114,20 +117,20 @@ ARCHITECTURE BEHAVIOUR OF main is
 	signal debounce_clk_in_wire : STD_LOGIC;
 	signal debounce_button_out_wire : STD_LOGIC;
 
+
 	BEGIN
-		
 		U1: FSM
-			port map (A => SW, B => SW, opcode_in => SW(1 downto 0), buttonC => debounce_button_out_wire, clk => CLK100MHZ, operandA => regA_in_wire, operandB => regB_in_wire, operandO => regO_in_wire, display_Mode => fsm_display_mode_out_wire);
+			port map (buttonC => debounce_button_out_wire, clk => CLK100MHZ, enable_A => fsm_enableA_out_wire, enable_B => fsm_enableB_out_wire, enable_G => fsm_enableG_out_wire, enable_O => fsm_enableO_out_wire, display_Mode => fsm_display_mode_out_wire);
         U2: ALU
             port map (opcode_in => regO_out_wire, clk => CLK100MHZ,  A => regA_out_wire, B => regB_out_wire, result => regG_in_wire);
         U3: regA
-            port map(D => regA_in_wire, Clk => CLK100MHZ, Q => regA_out_wire);
+            port map(D => SW, Clk => CLK100MHZ, enable => fsm_enableA_out_wire, Q => regA_out_wire);
         U4: regB
-            port map(D => regB_in_wire, Clk => CLK100MHZ, Q => regB_out_wire);
+            port map(D => SW, Clk => CLK100MHZ, enable => fsm_enableB_out_wire, Q => regB_out_wire);
         U5: regG
-            port map(D => regG_in_wire, Clk => CLK100MHZ, Q => regG_out_wire);
+            port map(D => regG_in_wire, Clk => CLK100MHZ, enable => fsm_enableG_out_wire, Q => regG_out_wire);
         U6: regO
-            port map(D => regO_in_wire, Clk => CLK100MHZ, Q => regO_out_wire);
+            port map(D => SW(1 downto 0), Clk => CLK100MHZ, enable => fsm_enableO_out_wire, Q => regO_out_wire);
         U7: BIN2BCD
             port map(BINARY => regG_out_wire, BCD => bin_to_bcd_wire);
         U8: seg7
@@ -137,7 +140,7 @@ ARCHITECTURE BEHAVIOUR OF main is
         U10: seg7
             port map(bcd => bin_to_bcd_wire(11 downto 8), seg7_out => seg7_mux_wire3);
         U11: display_Mode_Select_Mux
-            port map (regA => regA_out_wire, regB => regB_out_wire, regG => regG_out_wire, regO => regO_out_wire, sel => fsm_display_mode_out_wire, clk => CLK100MHZ, led_out => LED);
+            port map (regA => regA_out_wire, regB => regB_out_wire, regG => regG_out_wire, regO => regO_out_wire, sel => fsm_display_mode_out_wire, led_out => LED);
         U12: clkDiv100to500
             port map(clk_in => CLK100MHZ, clk_out => debounce_clk_in_wire);
         U13: seg7_mux

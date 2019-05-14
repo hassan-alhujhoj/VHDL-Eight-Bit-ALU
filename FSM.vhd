@@ -10,13 +10,10 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 -- Display_mode = output the state of the FSM
 
 entity FSM is
-	port(A, B                 : in STD_LOGIC_VECTOR(7 downto 0);
-	    opcode_in             : in STD_LOGIC_VECTOR(1 downto 0);
-        buttonC               : in STD_LOGIC;
-        clk                   : in STD_LOGIC;
-		operandA, operandB    : out STD_LOGIC_VECTOR(7 downto 0);
-		operandO              : out STD_LOGIC_VECTOR(1 downto 0);
-		display_Mode          : out STD_LOGIC_VECTOR(1 downto 0));
+	port(buttonC                                : in STD_LOGIC;
+        clk                                     : in STD_LOGIC;
+        enable_A, enable_B, enable_G, enable_O  : out STD_LOGIC;
+		display_Mode                            : out STD_LOGIC_VECTOR(1 downto 0));
 end FSM;
 
 Architecture behaviour of FSM is
@@ -24,7 +21,7 @@ Architecture behaviour of FSM is
 	begin
 	
 	--implement the finite state machine
-	process(A, B, opcode_in, buttonC)	
+	process(buttonC, clk)	
         variable counter : INTEGER := 0;
         begin
             if clk'event and clk = '1' then
@@ -36,15 +33,28 @@ Architecture behaviour of FSM is
                 end if;
             end if;
             if counter = 0 then 
-                operandA <= A;
+                enable_A <= '1';
+                enable_B <= '0';
+                enable_O <= '0';
+                enable_G <= '0';
                 display_Mode <= "00";
             elsif counter = 1 then
-                operandB <= B;
+                enable_A <= '0';
+                enable_B <= '1';
+                enable_O <= '0';
+                enable_G <= '0';
                 display_Mode <= "01";
             elsif counter = 2 then
-                operandO <= opcode_in;
+                enable_A <= '0';
+                enable_B <= '0';
+                enable_O <= '1';
+                enable_G <= '0';
                 display_Mode <= "10";
             elsif counter = 3 then
+                enable_A <= '0';
+                enable_B <= '0';
+                enable_O <= '0';
+                enable_G <= '1';
                 display_Mode <= "11";
             end if;
 	end process;
