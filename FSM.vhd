@@ -8,7 +8,6 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 -- B = enter the value of registerB, 
 -- opcode = enter the opcode of registerO
 -- Display_mode = output the state of the FSM
-
 entity FSM is
 	port(buttonC                                : in STD_LOGIC;
         clk                                     : in STD_LOGIC;

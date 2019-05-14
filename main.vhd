@@ -8,6 +8,7 @@ ENTITY main IS
     PORT(CLK100MHZ						: in STD_LOGIC;
 		SW 								: in STD_LOGIC_VECTOR(7 downto 0);
 		BTNC                            : in STD_LOGIC;
+		JA                              : out STD_LOGIC_VECTOR(3 downto 0);
 		CA, CB, CC, CD, CE, CF, CG      : out STD_LOGIC;
 		AN                              : out STD_LOGIC_VECTOR(7 downto 0); 
 		LED 							: out STD_LOGIC_VECTOR(7 downto 0));
@@ -149,4 +150,5 @@ ARCHITECTURE BEHAVIOUR OF main is
             port map (clk_in => CLK100MHZ, clk_out => clkDiv100to500_wire);
         U15: debounce
             port map(button => BTNC, clk => debounce_clk_in_wire, debounce_out => debounce_button_out_wire);
+        JA(1) <= clkDiv100to500_wire;
 END BEHAVIOUR;
