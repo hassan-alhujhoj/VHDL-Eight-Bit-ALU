@@ -13,10 +13,8 @@ The fsm operand input values are entered using the switches of the fpja board an
 ## Inputs
 
 > #### FSM inputs
-- SW[7:0]
-- BTNC
+- buttonC
 - clk
-- opcode_in
 
 > #### ALU inputs
 - opreand A
@@ -27,18 +25,22 @@ The fsm operand input values are entered using the switches of the fpja board an
 > #### RegisterA
 - opreand A
 - clk
+- enable
 
 > #### RegisterB
 - opreand B
 - clk
+- enable
 
 > #### RegisterG
 - opreand G
 - clk
+- enable
 
 > #### RegisterO
 - opreand O
 - clk
+- enable
 
 > #### BIN2BCD
 - opreand G
@@ -67,9 +69,7 @@ The fsm operand input values are entered using the switches of the fpja board an
 ## Outputs
 
 > #### FSM output
-- operand A
-- operand B
-- operand O
+- enable_A, enable_b, enable_C, enable_O 
 - display_Mode
 
 > #### ALU output
