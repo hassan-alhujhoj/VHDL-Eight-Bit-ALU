@@ -13,7 +13,6 @@ end ALU;
 architecture Behav of ALU is
 	begin
 		acc : process (clk, opcode_in, A, B) is    
-        variable counter : INTEGER := 0;
 			begin
 			    if (clk'event and clk = '1') then
                     case opcode_in is
