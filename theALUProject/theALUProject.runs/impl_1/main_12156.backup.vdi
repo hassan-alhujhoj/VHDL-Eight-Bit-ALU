@@ -1,0 +1,561 @@
+#-----------------------------------------------------------
+# Vivado v2016.2 (64-bit)
+# SW Build 1577090 on Thu Jun  2 16:32:40 MDT 2016
+# IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
+# Start of session at: Mon May 13 14:55:44 2019
+# Process ID: 12156
+# Current directory: P:/ENEL373/theALUProject/theALUProject.runs/impl_1
+# Command line: vivado.exe -log main.vdi -applog -messageDb vivado.pb -mode batch -source main.tcl -notrace
+# Log file: P:/ENEL373/theALUProject/theALUProject.runs/impl_1/main.vdi
+# Journal file: P:/ENEL373/theALUProject/theALUProject.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source main.tcl -notrace
+WARNING: [Board 49-26] cannot add Board Part digilentinc.com:arty-z7-20:part0:1.0 available at C:/Xilinx/Vivado/2016.2/data/boards/board_files/arty-z7-20/A.0/board.xml as part xc7z020clg400-1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at C:/Xilinx/Vivado/2016.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part digilentinc.com:zedboard:part0:1.0 available at C:/Xilinx/Vivado/2016.2/data/boards/board_files/zedboard/1.3/board.xml as part xc7z020clg484-1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part digilentinc.com:zybo:part0:1.0 available at C:/Xilinx/Vivado/2016.2/data/boards/board_files/zybo/B.3/board.xml as part xc7z010clg400-1 specified in board_part file is either invalid or not available
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+INFO: [Netlist 29-17] Analyzing 61 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2016.2
+INFO: [Device 21-403] Loading part xc7a100tcsg324-3
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [P:/ENEL373/Lab_A01_group_3/Nexys4DDR_Master.xdc]
+WARNING: [Vivado 12-584] No ports matched 'SW[8]'. [P:/ENEL373/Lab_A01_group_3/Nexys4DDR_Master.xdc:21]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [P:/ENEL373/Lab_A01_group_3/Nexys4DDR_Master.xdc:21]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'SW[9]'. [P:/ENEL373/Lab_A01_group_3/Nexys4DDR_Master.xdc:22]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [P:/ENEL373/Lab_A01_group_3/Nexys4DDR_Master.xdc:22]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'SW[10]'. [P:/ENEL373/Lab_A01_group_3/Nexys4DDR_Master.xdc:23]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [P:/ENEL373/Lab_A01_group_3/Nexys4DDR_Master.xdc:23]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'SW[11]'. [P:/ENEL373/Lab_A01_group_3/Nexys4DDR_Master.xdc:24]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [P:/ENEL373/Lab_A01_group_3/Nexys4DDR_Master.xdc:24]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'SW[12]'. [P:/ENEL373/Lab_A01_group_3/Nexys4DDR_Master.xdc:25]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [P:/ENEL373/Lab_A01_group_3/Nexys4DDR_Master.xdc:25]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'SW[13]'. [P:/ENEL373/Lab_A01_group_3/Nexys4DDR_Master.xdc:26]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [P:/ENEL373/Lab_A01_group_3/Nexys4DDR_Master.xdc:26]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'SW[14]'. [P:/ENEL373/Lab_A01_group_3/Nexys4DDR_Master.xdc:27]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [P:/ENEL373/Lab_A01_group_3/Nexys4DDR_Master.xdc:27]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'SW[15]'. [P:/ENEL373/Lab_A01_group_3/Nexys4DDR_Master.xdc:28]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [P:/ENEL373/Lab_A01_group_3/Nexys4DDR_Master.xdc:28]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED[8]'. [P:/ENEL373/Lab_A01_group_3/Nexys4DDR_Master.xdc:41]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [P:/ENEL373/Lab_A01_group_3/Nexys4DDR_Master.xdc:41]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED[9]'. [P:/ENEL373/Lab_A01_group_3/Nexys4DDR_Master.xdc:42]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [P:/ENEL373/Lab_A01_group_3/Nexys4DDR_Master.xdc:42]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED[10]'. [P:/ENEL373/Lab_A01_group_3/Nexys4DDR_Master.xdc:43]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [P:/ENEL373/Lab_A01_group_3/Nexys4DDR_Master.xdc:43]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED[11]'. [P:/ENEL373/Lab_A01_group_3/Nexys4DDR_Master.xdc:44]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [P:/ENEL373/Lab_A01_group_3/Nexys4DDR_Master.xdc:44]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED[12]'. [P:/ENEL373/Lab_A01_group_3/Nexys4DDR_Master.xdc:45]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [P:/ENEL373/Lab_A01_group_3/Nexys4DDR_Master.xdc:45]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED[13]'. [P:/ENEL373/Lab_A01_group_3/Nexys4DDR_Master.xdc:46]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [P:/ENEL373/Lab_A01_group_3/Nexys4DDR_Master.xdc:46]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED[14]'. [P:/ENEL373/Lab_A01_group_3/Nexys4DDR_Master.xdc:47]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [P:/ENEL373/Lab_A01_group_3/Nexys4DDR_Master.xdc:47]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED[15]'. [P:/ENEL373/Lab_A01_group_3/Nexys4DDR_Master.xdc:48]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [P:/ENEL373/Lab_A01_group_3/Nexys4DDR_Master.xdc:48]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED16_G'. [P:/ENEL373/Lab_A01_group_3/Nexys4DDR_Master.xdc:51]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [P:/ENEL373/Lab_A01_group_3/Nexys4DDR_Master.xdc:51]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED16_R'. [P:/ENEL373/Lab_A01_group_3/Nexys4DDR_Master.xdc:52]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [P:/ENEL373/Lab_A01_group_3/Nexys4DDR_Master.xdc:52]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED17_B'. [P:/ENEL373/Lab_A01_group_3/Nexys4DDR_Master.xdc:53]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [P:/ENEL373/Lab_A01_group_3/Nexys4DDR_Master.xdc:53]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED17_G'. [P:/ENEL373/Lab_A01_group_3/Nexys4DDR_Master.xdc:54]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [P:/ENEL373/Lab_A01_group_3/Nexys4DDR_Master.xdc:54]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED17_R'. [P:/ENEL373/Lab_A01_group_3/Nexys4DDR_Master.xdc:55]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [P:/ENEL373/Lab_A01_group_3/Nexys4DDR_Master.xdc:55]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'JA[1]'. [P:/ENEL373/Lab_A01_group_3/Nexys4DDR_Master.xdc:96]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [P:/ENEL373/Lab_A01_group_3/Nexys4DDR_Master.xdc:96]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'JA[2]'. [P:/ENEL373/Lab_A01_group_3/Nexys4DDR_Master.xdc:97]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [P:/ENEL373/Lab_A01_group_3/Nexys4DDR_Master.xdc:97]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'JA[3]'. [P:/ENEL373/Lab_A01_group_3/Nexys4DDR_Master.xdc:98]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [P:/ENEL373/Lab_A01_group_3/Nexys4DDR_Master.xdc:98]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'JA[4]'. [P:/ENEL373/Lab_A01_group_3/Nexys4DDR_Master.xdc:99]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [P:/ENEL373/Lab_A01_group_3/Nexys4DDR_Master.xdc:99]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'JB[1]'. [P:/ENEL373/Lab_A01_group_3/Nexys4DDR_Master.xdc:108]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [P:/ENEL373/Lab_A01_group_3/Nexys4DDR_Master.xdc:108]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'JB[2]'. [P:/ENEL373/Lab_A01_group_3/Nexys4DDR_Master.xdc:109]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [P:/ENEL373/Lab_A01_group_3/Nexys4DDR_Master.xdc:109]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'JD[1]'. [P:/ENEL373/Lab_A01_group_3/Nexys4DDR_Master.xdc:132]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [P:/ENEL373/Lab_A01_group_3/Nexys4DDR_Master.xdc:132]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'JD[2]'. [P:/ENEL373/Lab_A01_group_3/Nexys4DDR_Master.xdc:133]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [P:/ENEL373/Lab_A01_group_3/Nexys4DDR_Master.xdc:133]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'XA_N[1]'. [P:/ENEL373/Lab_A01_group_3/Nexys4DDR_Master.xdc:144]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [P:/ENEL373/Lab_A01_group_3/Nexys4DDR_Master.xdc:144]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'XA_P[1]'. [P:/ENEL373/Lab_A01_group_3/Nexys4DDR_Master.xdc:145]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [P:/ENEL373/Lab_A01_group_3/Nexys4DDR_Master.xdc:145]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+Finished Parsing XDC File [P:/ENEL373/Lab_A01_group_3/Nexys4DDR_Master.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+link_design: Time (s): cpu = 00:00:04 ; elapsed = 00:00:07 . Memory (MB): peak = 464.734 ; gain = 257.285
+INFO: [Vivado_Tcl 4-424] Cannot write hardware definition file as there are no IPI block design hardware handoff files present
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a100t'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.078 . Memory (MB): peak = 470.184 ; gain = 5.449
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+
+Starting Logic Optimization Task
+Implement Debug Cores | Checksum: 13a4e0a88
+
+Phase 1 Retarget
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Opt 31-49] Retargeted 0 cell(s).
+Phase 1 Retarget | Checksum: 170331eec
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.047 . Memory (MB): peak = 948.121 ; gain = 0.000
+
+Phase 2 Constant Propagation
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Opt 31-10] Eliminated 0 cells.
+Phase 2 Constant Propagation | Checksum: 170331eec
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.063 . Memory (MB): peak = 948.121 ; gain = 0.000
+
+Phase 3 Sweep
+INFO: [Opt 31-12] Eliminated 135 unconnected nets.
+INFO: [Opt 31-11] Eliminated 0 unconnected cells.
+Phase 3 Sweep | Checksum: 7091c36d
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.094 . Memory (MB): peak = 948.121 ; gain = 0.000
+
+Starting Connectivity Check Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 948.121 ; gain = 0.000
+Ending Logic Optimization Task | Checksum: 7091c36d
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.094 . Memory (MB): peak = 948.121 ; gain = 0.000
+
+Starting Power Optimization Task
+INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
+Ending Power Optimization Task | Checksum: 7091c36d
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.016 . Memory (MB): peak = 948.121 ; gain = 0.000
+INFO: [Common 17-83] Releasing license: Implementation
+21 Infos, 35 Warnings, 31 Critical Warnings and 0 Errors encountered.
+opt_design completed successfully
+opt_design: Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 948.121 ; gain = 483.387
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.156 . Memory (MB): peak = 948.121 ; gain = 0.000
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Coretcl 2-168] The results of DRC are in file P:/ENEL373/theALUProject/theALUProject.runs/impl_1/main_drc_opted.rpt.
+INFO: [Chipscope 16-241] No debug cores found in the current design.
+Before running the implement_debug_core command, either use the Set Up Debug wizard (GUI mode)
+or use the create_debug_core and connect_debug_core Tcl commands to insert debug cores into the design.
+Command: place_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a100t'
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Running DRC as a precondition to command place_design
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+Starting Placer Task
+INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 2 CPUs
+
+Phase 1 Placer Initialization
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 948.121 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.016 . Memory (MB): peak = 948.121 ; gain = 0.000
+
+Phase 1.1 IO Placement/ Clock Placement/ Build Placer Device
+
+Phase 1.1.1 ParallelPlaceIOClockAndInitTop
+
+Phase 1.1.1.1 Pre-Place Cells
+Phase 1.1.1.1 Pre-Place Cells | Checksum: 5a4f9366
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.031 . Memory (MB): peak = 948.121 ; gain = 0.000
+
+Phase 1.1.1.2 Constructing HAPIClkRuleMgr
+Phase 1.1.1.2 Constructing HAPIClkRuleMgr | Checksum: 5a4f9366
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.047 . Memory (MB): peak = 948.121 ; gain = 0.000
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+
+Phase 1.1.1.3 IO and Clk Clean Up
+
+Phase 1.1.1.3.1 Constructing HAPIClkRuleMgr
+Phase 1.1.1.3.1 Constructing HAPIClkRuleMgr | Checksum: 5a4f9366
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.906 . Memory (MB): peak = 965.254 ; gain = 17.133
+Phase 1.1.1.3 IO and Clk Clean Up | Checksum: 5a4f9366
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.922 . Memory (MB): peak = 965.254 ; gain = 17.133
+
+Phase 1.1.1.4 Implementation Feasibility check On IDelay
+Phase 1.1.1.4 Implementation Feasibility check On IDelay | Checksum: 5a4f9366
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.922 . Memory (MB): peak = 965.254 ; gain = 17.133
+
+Phase 1.1.1.5 Commit IO Placement
+Phase 1.1.1.5 Commit IO Placement | Checksum: f9692600
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.922 . Memory (MB): peak = 965.254 ; gain = 17.133
+Phase 1.1.1 ParallelPlaceIOClockAndInitTop | Checksum: f9692600
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.922 . Memory (MB): peak = 965.254 ; gain = 17.133
+Phase 1.1 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 1682c69e1
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.937 . Memory (MB): peak = 965.254 ; gain = 17.133
+
+Phase 1.2 Build Placer Netlist Model
+
+Phase 1.2.1 Place Init Design
+
+Phase 1.2.1.1 Make Others
+Phase 1.2.1.1 Make Others | Checksum: 205f16d59
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.969 . Memory (MB): peak = 965.254 ; gain = 17.133
+
+Phase 1.2.1.2 Init Lut Pin Assignment
+Phase 1.2.1.2 Init Lut Pin Assignment | Checksum: 205f16d59
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.984 . Memory (MB): peak = 965.254 ; gain = 17.133
+Phase 1.2.1 Place Init Design | Checksum: 24b5f1709
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 965.254 ; gain = 17.133
+Phase 1.2 Build Placer Netlist Model | Checksum: 24b5f1709
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 965.254 ; gain = 17.133
+
+Phase 1.3 Constrain Clocks/Macros
+Phase 1.3 Constrain Clocks/Macros | Checksum: 24b5f1709
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 965.254 ; gain = 17.133
+Phase 1 Placer Initialization | Checksum: 24b5f1709
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 965.254 ; gain = 17.133
+
+Phase 2 Global Placement
+Phase 2 Global Placement | Checksum: 25222a53a
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 965.254 ; gain = 17.133
+
+Phase 3 Detail Placement
+
+Phase 3.1 Commit Multi Column Macros
+Phase 3.1 Commit Multi Column Macros | Checksum: 25222a53a
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 965.254 ; gain = 17.133
+
+Phase 3.2 Commit Most Macros & LUTRAMs
+Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 982d0c82
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 965.254 ; gain = 17.133
+
+Phase 3.3 Area Swap Optimization
+Phase 3.3 Area Swap Optimization | Checksum: 14714c9da
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 965.254 ; gain = 17.133
+
+Phase 3.4 updateClock Trees: DP
+Phase 3.4 updateClock Trees: DP | Checksum: 14714c9da
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 965.254 ; gain = 17.133
+
+Phase 3.5 Timing Path Optimizer
+Phase 3.5 Timing Path Optimizer | Checksum: 10b23d8e1
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 965.254 ; gain = 17.133
+
+Phase 3.6 Fast Optimization
+Phase 3.6 Fast Optimization | Checksum: 10b23d8e1
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 965.254 ; gain = 17.133
+
+Phase 3.7 Small Shape Detail Placement
+Phase 3.7 Small Shape Detail Placement | Checksum: b4582d91
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 965.254 ; gain = 17.133
+
+Phase 3.8 Re-assign LUT pins
+Phase 3.8 Re-assign LUT pins | Checksum: 163994e90
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 965.254 ; gain = 17.133
+
+Phase 3.9 Pipeline Register Optimization
+Phase 3.9 Pipeline Register Optimization | Checksum: 163994e90
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 965.254 ; gain = 17.133
+
+Phase 3.10 Fast Optimization
+Phase 3.10 Fast Optimization | Checksum: 163994e90
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 965.254 ; gain = 17.133
+Phase 3 Detail Placement | Checksum: 163994e90
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 965.254 ; gain = 17.133
+
+Phase 4 Post Placement Optimization and Clean-Up
+
+Phase 4.1 Post Commit Optimization
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+
+Phase 4.1.1 updateClock Trees: PCOPT
+Phase 4.1.1 updateClock Trees: PCOPT | Checksum: 163d851cf
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 965.254 ; gain = 17.133
+
+Phase 4.1.2 Post Placement Optimization
+INFO: [Place 30-746] Post Placement Timing Summary WNS=5.281. For the most accurate timing information please run report_timing.
+Phase 4.1.2 Post Placement Optimization | Checksum: 295868fca
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 965.254 ; gain = 17.133
+Phase 4.1 Post Commit Optimization | Checksum: 295868fca
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 965.254 ; gain = 17.133
+
+Phase 4.2 Sweep Clock Roots: Post-Placement
+Phase 4.2 Sweep Clock Roots: Post-Placement | Checksum: 295868fca
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 965.254 ; gain = 17.133
+
+Phase 4.3 Uram Pipeline Register Optimization
+Phase 4.3 Uram Pipeline Register Optimization | Checksum: 295868fca
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 965.254 ; gain = 17.133
+
+Phase 4.4 Post Placement Cleanup
+Phase 4.4 Post Placement Cleanup | Checksum: 295868fca
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 965.254 ; gain = 17.133
+
+Phase 4.5 Placer Reporting
+Phase 4.5 Placer Reporting | Checksum: 295868fca
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 965.254 ; gain = 17.133
+
+Phase 4.6 Final Placement Cleanup
+Phase 4.6 Final Placement Cleanup | Checksum: 2906e8b7a
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 965.254 ; gain = 17.133
+Phase 4 Post Placement Optimization and Clean-Up | Checksum: 2906e8b7a
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 965.254 ; gain = 17.133
+Ending Placer Task | Checksum: 1b74d66b7
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 965.254 ; gain = 17.133
+INFO: [Common 17-83] Releasing license: Implementation
+36 Infos, 35 Warnings, 31 Critical Warnings and 0 Errors encountered.
+place_design completed successfully
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.266 . Memory (MB): peak = 965.254 ; gain = 0.000
+report_io: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.046 . Memory (MB): peak = 965.254 ; gain = 0.000
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.032 . Memory (MB): peak = 965.254 ; gain = 0.000
+report_control_sets: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 965.254 ; gain = 0.000
+Command: route_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a100t'
+Running DRC as a precondition to command route_design
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+
+Starting Routing Task
+INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 2 CPUs
+Checksum: PlaceDB: c1c2cb75 ConstDB: 0 ShapeSum: f58a9b42 RouteDB: 0
+
+Phase 1 Build RT Design
+Phase 1 Build RT Design | Checksum: 1ccc26faf
+
+Time (s): cpu = 00:00:33 ; elapsed = 00:00:30 . Memory (MB): peak = 1113.914 ; gain = 148.660
+
+Phase 2 Router Initialization
+
+Phase 2.1 Create Timer
+Phase 2.1 Create Timer | Checksum: 1ccc26faf
+
+Time (s): cpu = 00:00:33 ; elapsed = 00:00:30 . Memory (MB): peak = 1113.914 ; gain = 148.660
+
+Phase 2.2 Fix Topology Constraints
+Phase 2.2 Fix Topology Constraints | Checksum: 1ccc26faf
+
+Time (s): cpu = 00:00:33 ; elapsed = 00:00:30 . Memory (MB): peak = 1113.914 ; gain = 148.660
+
+Phase 2.3 Pre Route Cleanup
+Phase 2.3 Pre Route Cleanup | Checksum: 1ccc26faf
+
+Time (s): cpu = 00:00:33 ; elapsed = 00:00:30 . Memory (MB): peak = 1113.914 ; gain = 148.660
+ Number of Nodes with overlaps = 0
+
+Phase 2.4 Update Timing
+Phase 2.4 Update Timing | Checksum: e3254362
+
+Time (s): cpu = 00:00:34 ; elapsed = 00:00:30 . Memory (MB): peak = 1113.914 ; gain = 148.660
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=5.292  | TNS=0.000  | WHS=-0.160 | THS=-3.804 |
+
+Phase 2 Router Initialization | Checksum: 14c11a163
+
+Time (s): cpu = 00:00:34 ; elapsed = 00:00:30 . Memory (MB): peak = 1113.914 ; gain = 148.660
+
+Phase 3 Initial Routing
+Phase 3 Initial Routing | Checksum: 1f739dba1
+
+Time (s): cpu = 00:00:34 ; elapsed = 00:00:31 . Memory (MB): peak = 1113.914 ; gain = 148.660
+
+Phase 4 Rip-up And Reroute
+
+Phase 4.1 Global Iteration 0
+ Number of Nodes with overlaps = 10
+ Number of Nodes with overlaps = 0
+
+Phase 4.1.1 Update Timing
+Phase 4.1.1 Update Timing | Checksum: 1d99300b9
+
+Time (s): cpu = 00:00:34 ; elapsed = 00:00:31 . Memory (MB): peak = 1113.914 ; gain = 148.660
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=4.760  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+
+Phase 4.1 Global Iteration 0 | Checksum: 1d99300b9
+
+Time (s): cpu = 00:00:34 ; elapsed = 00:00:31 . Memory (MB): peak = 1113.914 ; gain = 148.660
+Phase 4 Rip-up And Reroute | Checksum: 1d99300b9
+
+Time (s): cpu = 00:00:34 ; elapsed = 00:00:31 . Memory (MB): peak = 1113.914 ; gain = 148.660
+
+Phase 5 Delay and Skew Optimization
+
+Phase 5.1 Delay CleanUp
+
+Phase 5.1.1 Update Timing
+Phase 5.1.1 Update Timing | Checksum: 1327732de
+
+Time (s): cpu = 00:00:34 ; elapsed = 00:00:31 . Memory (MB): peak = 1113.914 ; gain = 148.660
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=4.836  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+
+Phase 5.1 Delay CleanUp | Checksum: 1327732de
+
+Time (s): cpu = 00:00:34 ; elapsed = 00:00:31 . Memory (MB): peak = 1113.914 ; gain = 148.660
+
+Phase 5.2 Clock Skew Optimization
+Phase 5.2 Clock Skew Optimization | Checksum: 1327732de
+
+Time (s): cpu = 00:00:34 ; elapsed = 00:00:31 . Memory (MB): peak = 1113.914 ; gain = 148.660
+Phase 5 Delay and Skew Optimization | Checksum: 1327732de
+
+Time (s): cpu = 00:00:34 ; elapsed = 00:00:31 . Memory (MB): peak = 1113.914 ; gain = 148.660
+
+Phase 6 Post Hold Fix
+
+Phase 6.1 Hold Fix Iter
+
+Phase 6.1.1 Update Timing
+Phase 6.1.1 Update Timing | Checksum: 1ddd23b70
+
+Time (s): cpu = 00:00:34 ; elapsed = 00:00:31 . Memory (MB): peak = 1113.914 ; gain = 148.660
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=4.836  | TNS=0.000  | WHS=0.099  | THS=0.000  |
+
+Phase 6.1 Hold Fix Iter | Checksum: 1ddd23b70
+
+Time (s): cpu = 00:00:34 ; elapsed = 00:00:31 . Memory (MB): peak = 1113.914 ; gain = 148.660
+Phase 6 Post Hold Fix | Checksum: 1ddd23b70
+
+Time (s): cpu = 00:00:34 ; elapsed = 00:00:31 . Memory (MB): peak = 1113.914 ; gain = 148.660
+
+Phase 7 Route finalize
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0.0462201 %
+  Global Horizontal Routing Utilization  = 0.0387894 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 0
+  Number of Unrouted Nets             = 0
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+Phase 7 Route finalize | Checksum: 1ddd23b70
+
+Time (s): cpu = 00:00:34 ; elapsed = 00:00:31 . Memory (MB): peak = 1113.914 ; gain = 148.660
+
+Phase 8 Verifying routed nets
+
+ Verification completed successfully
+Phase 8 Verifying routed nets | Checksum: 1ddd23b70
+
+Time (s): cpu = 00:00:34 ; elapsed = 00:00:31 . Memory (MB): peak = 1113.914 ; gain = 148.660
+
+Phase 9 Depositing Routes
+Phase 9 Depositing Routes | Checksum: 20c38b512
+
+Time (s): cpu = 00:00:34 ; elapsed = 00:00:31 . Memory (MB): peak = 1113.914 ; gain = 148.660
+
+Phase 10 Post Router Timing
+INFO: [Route 35-57] Estimated Timing Summary | WNS=4.836  | TNS=0.000  | WHS=0.099  | THS=0.000  |
+
+INFO: [Route 35-327] The final timing numbers are based on the router estimated timing analysis. For a complete and accurate timing signoff, please run report_timing_summary.
+Phase 10 Post Router Timing | Checksum: 20c38b512
+
+Time (s): cpu = 00:00:34 ; elapsed = 00:00:31 . Memory (MB): peak = 1113.914 ; gain = 148.660
+INFO: [Route 35-16] Router Completed Successfully
+
+Time (s): cpu = 00:00:34 ; elapsed = 00:00:31 . Memory (MB): peak = 1113.914 ; gain = 148.660
+
+Routing Is Done.
+INFO: [Common 17-83] Releasing license: Implementation
+49 Infos, 35 Warnings, 31 Critical Warnings and 0 Errors encountered.
+route_design completed successfully
+route_design: Time (s): cpu = 00:00:35 ; elapsed = 00:00:31 . Memory (MB): peak = 1113.914 ; gain = 148.660
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.265 . Memory (MB): peak = 1113.914 ; gain = 0.000
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Coretcl 2-168] The results of DRC are in file P:/ENEL373/theALUProject/theALUProject.runs/impl_1/main_drc_routed.rpt.
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -3, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+INFO: [Common 17-206] Exiting Vivado at Mon May 13 14:56:43 2019...
