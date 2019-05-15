@@ -19,7 +19,7 @@ ARCHITECTURE BEHAVIOUR OF main is
 
     component seg7 is
         Port (bcd       : in STD_LOGIC_VECTOR (3 downto 0);
-              seg7_out    : out STD_LOGIC_VECTOR(6 downto 0));
+              seg7_out  : out STD_LOGIC_VECTOR(6 downto 0));
     end component;
     
     component ALU is
@@ -30,42 +30,42 @@ ARCHITECTURE BEHAVIOUR OF main is
 	end component;
 
 	component FSM is 
-        port(buttonC                                        : in STD_LOGIC;
-        clk                                                 : in STD_LOGIC;
-        enable_A, enable_B, enable_G, enable_O, enable_ALU  : out STD_LOGIC;
-        display_Mode                                        : out STD_LOGIC_VECTOR(1 downto 0);
-        state_1_led_out                                     : out STD_LOGIC;
-        state_2_led_out                                     : out STD_LOGIC;
-        state_3_led_out                                     : out STD_LOGIC;
-        state_4_led_out                                     : out STD_LOGIC);
+        port(buttonC                                : in STD_LOGIC;
+            clk                                     : in STD_LOGIC;
+            enable_A, enable_B, enable_G, enable_O  : out STD_LOGIC;
+            display_Mode                            : out STD_LOGIC_VECTOR(1 downto 0));
 	end component;
 	
 	component regA is
         port(D 		  : in std_logic_vector(7 downto 0);
             Clk       : in std_logic;
             enable    : in std_logic;
-            Q           : out std_logic_vector(7 downto 0));
+            state     : out std_logic;
+            Q         : out std_logic_vector(7 downto 0));
     end component;
     
     component regB is
         port(D 		  : in std_logic_vector(7 downto 0);
-        Clk       : in std_logic;
-        enable    : in std_logic;
-        Q           : out std_logic_vector(7 downto 0));
+            Clk       : in std_logic;
+            enable    : in std_logic;
+            state     : out std_logic;
+            Q         : out std_logic_vector(7 downto 0));
     end component;
     
     component regG is
         port(D 		  : in std_logic_vector(7 downto 0);
-        Clk       : in std_logic;
-        enable    : in std_logic;
-        Q           : out std_logic_vector(7 downto 0));
+            Clk       : in std_logic;
+            enable    : in std_logic;
+            state     : out std_logic;
+            Q         : out std_logic_vector(7 downto 0));
     end component;
     
     component regO is
         port(D 		  : in std_logic_vector(1 downto 0);
-        Clk       : in std_logic;
-        enable    : in std_logic;
-        Q           : out std_logic_vector(1 downto 0));
+            Clk       : in std_logic;
+            enable    : in std_logic;
+            state     : out std_logic;
+            Q         : out std_logic_vector(1 downto 0));
     end component;
     
     component BIN2BCD is
@@ -106,15 +106,18 @@ ARCHITECTURE BEHAVIOUR OF main is
 	signal fsm_enableB_out_wire : STD_LOGIC;
 	signal fsm_enableG_out_wire : STD_LOGIC;
 	signal fsm_enableO_out_wire : STD_LOGIC;
-	signal fsm_enableALU_out_wire : STD_LOGIC;
 	signal regA_in_wire : STD_LOGIC_VECTOR(7 downto 0);
-	signal regB_in_wire : STD_LOGIC_VECTOR(7 downto 0);
-    signal regA_out_wire : STD_LOGIC_VECTOR(7 downto 0);
+	signal regA_out_wire : STD_LOGIC_VECTOR(7 downto 0);
+	signal regA_state_wire : STD_LOGIC;
+    signal regB_in_wire : STD_LOGIC_VECTOR(7 downto 0);
     signal regB_out_wire : STD_LOGIC_VECTOR(7 downto 0);
+    signal regB_state_wire : STD_LOGIC;
 	signal regG_in_wire : STD_LOGIC_VECTOR(7 downto 0);
 	signal regG_out_wire : STD_LOGIC_VECTOR(7 downto 0);
+	signal regG_state_wire : STD_LOGIC;
 	signal regO_in_wire : STD_LOGIC_VECTOR(1 downto 0);
 	signal regO_out_wire : STD_LOGIC_VECTOR(1 downto 0);
+	signal regO_state_wire : STD_LOGIC;
 	signal bin_to_bcd_wire : STD_LOGIC_VECTOR(11 downto 0);
 	signal anode : STD_LOGIC_VECTOR(7 downto 0);
 	signal seg7_mux_wire1 : STD_LOGIC_VECTOR(6 downto 0);
@@ -124,22 +127,21 @@ ARCHITECTURE BEHAVIOUR OF main is
 	signal debounce_clk_in_wire : STD_LOGIC;
 	signal debounce_button_out_wire : STD_LOGIC;
 
-
 	BEGIN
 		U1: FSM
-			port map (buttonC => debounce_button_out_wire, clk => CLK100MHZ, enable_A => fsm_enableA_out_wire, enable_B => fsm_enableB_out_wire, enable_G => fsm_enableG_out_wire, enable_O => fsm_enableO_out_wire, enable_ALU => fsm_enableALU_out_wire, display_Mode => fsm_display_mode_out_wire, state_1_led_out => LED17_R, state_2_led_out => LED17_G, state_3_led_out => LED17_B, state_4_led_out => LED16_R);
+			port map (buttonC => debounce_button_out_wire, clk => CLK100MHZ, enable_A => fsm_enableA_out_wire, enable_B => fsm_enableB_out_wire, enable_G => fsm_enableG_out_wire, enable_O => fsm_enableO_out_wire, display_Mode => fsm_display_mode_out_wire);
         U2: ALU
             port map (opcode_in => regO_out_wire, clk => CLK100MHZ,  A => regA_out_wire, B => regB_out_wire, result => regG_in_wire);
         U3: regA
-            port map(D => SW(7 downto 0), Clk => CLK100MHZ, enable => fsm_enableA_out_wire, Q => regA_out_wire);
+            port map(D => SW(7 downto 0), Clk => CLK100MHZ, enable => fsm_enableA_out_wire, state => LED(15), Q => regA_out_wire);
         U4: regB
-            port map(D => SW(7 downto 0), Clk => CLK100MHZ, enable => fsm_enableB_out_wire, Q => regB_out_wire);
+            port map(D => SW(7 downto 0), Clk => CLK100MHZ, enable => fsm_enableB_out_wire, state => LED(14), Q => regB_out_wire);
         U5: regG
-            port map(D => regG_in_wire, Clk => CLK100MHZ, enable => fsm_enableG_out_wire, Q => regG_out_wire);
+            port map(D => regG_in_wire, Clk => CLK100MHZ, enable => fsm_enableG_out_wire, state => LED(13), Q => regG_out_wire);
         U6: regO
-            port map(D => SW(1 downto 0), Clk => CLK100MHZ, enable => fsm_enableO_out_wire, Q => regO_out_wire);
+            port map(D => SW(1 downto 0), Clk => CLK100MHZ, enable => fsm_enableO_out_wire, state => LED(12), Q => regO_out_wire);
         U7: BIN2BCD
-            port map(BINARY => regG_in_wire, BCD => bin_to_bcd_wire);
+            port map(BINARY => regB_in_wire, BCD => bin_to_bcd_wire);
         U8: seg7
             port map(bcd => bin_to_bcd_wire(3 downto 0), seg7_out => seg7_mux_wire1);
         U9: seg7
