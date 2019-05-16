@@ -6,7 +6,6 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 entity ALU is
     port(opcode_in  : in STD_LOGIC_VECTOR(1 downto 0);
         clk         : in std_logic;
-        enable      : in std_logic;
         A, B        : in std_logic_vector(7 downto 0);
         result      : out std_logic_vector(7 downto 0));
 end ALU;

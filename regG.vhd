@@ -19,9 +19,6 @@ architecture behaviour of regG is
 			if rising_edge(Clk) then
                 if enable = '1' then
                     Q <= D;
-                    state <= '1';
-                elsif enable = '0' then
-                    state <= '0';
                 end if;
             end if;
 	end process;
