@@ -4,7 +4,11 @@ use IEEE.std_logic_arith.all;
 use IEEE.std_logic_unsigned.all;
 
 
+<<<<<<< HEAD
 -- The reference for the following code can be accessed from this link: https://groups.google.com/forum/#!topic/comp.lang.vhdl/G34FmzBd7v0
+=======
+-- The reference for the following code can be accessed from this link: https://groups.google.com/d/msg/comp.lang.vhdl/G34FmzBd7v0/qVorUhitSRUJ
+>>>>>>> aa15a04b2125ff8008bfe0a483b41b7d59fc7712
 entity BIN2BCD is 
   port (BINARY    : in std_logic_vector(7 downto 0);  -- range 0 to 255
 		BCD       : out std_logic_vector(11 downto 0));
