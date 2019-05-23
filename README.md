@@ -13,13 +13,10 @@ The fsm operand input values are entered using the switches of the fpja board an
 ## Inputs
 
 > #### FSM inputs
-- SW[7:0]
-- BTNC
+- buttonC
 - clk
-- reset
 
 > #### ALU inputs
-- BTNU, BTND, BTNL, BTNR
 - opreand A
 - operand B
 - opcode
@@ -28,17 +25,22 @@ The fsm operand input values are entered using the switches of the fpja board an
 > #### RegisterA
 - opreand A
 - clk
-- En
+- enable
 
 > #### RegisterB
 - opreand B
 - clk
-- En
+- enable
 
 > #### RegisterG
 - opreand G
 - clk
-- En
+- enable
+
+> #### RegisterO
+- opreand O
+- clk
+- enable
 
 > #### BIN2BCD
 - opreand G
@@ -52,15 +54,26 @@ The fsm operand input values are entered using the switches of the fpja board an
 > #### seg7 - U9
 - bcd(11 downto 8)
 
+> #### display_Mode_Select_Mux
+- regA, regB, regG, regO
+- sel
+- clk
+
+> #### debounce
+- button
+- clk
+
+> #### clkDiv100to500
+- clk_in
 
 ## Outputs
 
 > #### FSM output
-- operand A
-- operand B
+- enable_A, enable_b, enable_C, enable_O 
+- display_Mode
 
 > #### ALU output
-- opreand G
+- result
 
 > #### RegisterA
 - opreand A
@@ -71,8 +84,11 @@ The fsm operand input values are entered using the switches of the fpja board an
 > #### RegisterG
 - opreand G
 
+> #### RegisterO
+- opreand O
+
 > #### BIN2BCD
-- bcd code
+- BCD code
 
 > #### seg7 - U7
 - bcd(3 downto 0)
@@ -83,22 +99,19 @@ The fsm operand input values are entered using the switches of the fpja board an
 > #### seg7 - U9
 - bcd(11 downto 8)
 
+> #### display_Mode_Select_Mux
+- led_out
+
+> #### debounce
+- debounce_out
+
+> #### clkDiv100to500
+- clk_out
+
 ## Buttons
 
-> #### Up
-- Enters the '+' operation for the ALU
-
-> #### Down
-- Enters the '-' operation for the ALU
-
-> #### Left
-- Enters the 'AND' operation for the ALU
-
-> #### Right
-- Enters the 'OR' operation for the ALU
-
 > #### Center
-- Changes the state of the FSM
+- Changes the state of the FSM and there are four states in total.
 
 ## Contributers
 > - Hassan Alhujhoj

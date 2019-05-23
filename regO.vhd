@@ -1,15 +1,17 @@
 library ieee;
 use ieee.std_logic_1164.all;
 
-entity regB is
-	generic (n 	      : integer := 8);
+
+entity regO is
+	generic (n 	      : integer := 2);
     port(D            : in std_logic_vector(n-1 downto 0);
         Clk           : in std_logic;
         enable        : in std_logic;
         Q             : out std_logic_vector(n-1 downto 0));
-end regB;
+end regO;
 
-architecture behaviour of regB is
+
+architecture behaviour of regO is
 	begin
 	process(Clk)
 		begin
