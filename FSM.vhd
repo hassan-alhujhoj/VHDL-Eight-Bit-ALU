@@ -23,10 +23,10 @@ use ieee.std_logic_1164.all;
 -- opcode = enter the opcode of registerO
 -- Display_mode = output the state of the FSM
 entity FSM is
-    port(buttonC                                : in STD_LOGIC;
-        clk                                     : in STD_LOGIC;
-        enable_A, enable_B, enable_G, enable_O  : out STD_LOGIC;
-        display_Mode                            : out STD_LOGIC_VECTOR(1 downto 0));
+    port(buttonC                                : in STD_LOGIC;                         -- The central button, ie BTNC.
+        clk                                     : in STD_LOGIC;                         -- The CLK100MHZ clock
+        enable_A, enable_B, enable_G, enable_O  : out STD_LOGIC;                        -- The enable signals sent into all the registers
+        display_Mode                            : out STD_LOGIC_VECTOR(1 downto 0));    -- The the current output state, ie, A, B, opcode, display mode.
 end FSM;
 
 Architecture behavioural of FSM is
@@ -35,18 +35,18 @@ Architecture behavioural of FSM is
 	signal prev_button : std_logic;
 	begin
         with current_s select display_Mode <=
-            "00" when s0,
-            "01" when s1,
-            "10" when s2,
-            "11" when s3;
+            "00" when s0,           -- state 0 or A
+            "01" when s1,           -- state 1 or B
+            "10" when s2,           -- state 2 or opcode
+            "11" when s3;           -- state 3 or display mode
         -- implement the state machine
         process(current_s)
             begin
               if rising_edge(clk) then
-                  enable_A <= '0';
-                  enable_B <= '0';
-                  enable_O <= '0';
-                  enable_G <= '0';
+                  enable_A <= '0';  -- enable sent to regA is 0
+                  enable_B <= '0';  -- enable sent to regB is 0
+                  enable_O <= '0';  -- enable sent to regG is 0
+                  enable_G <= '0';  -- enable sent to regO is 0
                 case current_s is
                     when s0 => 				-- when current state is "s0"
                         if buttonC = '1' and prev_button = '0' then

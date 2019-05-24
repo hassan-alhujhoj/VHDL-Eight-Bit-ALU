@@ -5,7 +5,7 @@
   /Author   (haa61)
   /Producer (Concept Engineering GmbH)
   /Creator  (Nlview 6.5.12  2016-01-29 bk=1.3547 VDI=39 GEI=35)
-  /CreationDate (D:20190517093421)
+  /CreationDate (D:20190524163726)
 >>
 endobj
 2 0 obj
@@ -44,7 +44,7 @@ endobj
 endobj
 %
 % Nlview page 1
-% (user space scaling 0.29259)
+% (user space scaling 0.220876)
 %
 9 0 obj
 <<
@@ -52,18 +52,18 @@ endobj
   /Parent    3 0 R
   /Resources 5 0 R
   /Contents  10 0 R
-  /MediaBox  [0 0 792 612]
-  /Rotate    -90
+  /MediaBox  [0 0 612 792]
+  /Rotate    0
 >>
 endobj
 10 0 obj
 <<
-  /Length 20522
+  /Length 20524
 >>
 stream
-1 0 0 1 0 201.127 cm
+1 0 0 1 0 309.772 cm
 1 0 0 1 28.8 28.8 cm
-0.29259 0 0 -0.29259 0 0 cm
+0.220876 0 0 -0.220876 0 0 cm
 1 0 0 1 0 -520 cm
 0 0 2510 520 re
 W n
@@ -2300,7 +2300,7 @@ endobj
 <<
   /Title  (U1 FSM)
   /C      [0.0 0.0 0.4]
-  /Dest   [9 0 R /FitR 196 292 249 337]
+  /Dest   [9 0 R /FitR 155 386 195 419]
   /Parent 12 0 R
   /Next   14 0 R
 >>
@@ -2309,7 +2309,7 @@ endobj
 <<
   /Title  (U10 seg7)
   /C      [0.0 0.0 0.4]
-  /Dest   [9 0 R /FitR 580 257 626 278]
+  /Dest   [9 0 R /FitR 444 359 480 375]
   /Parent 12 0 R
   /Prev   13 0 R
   /Next   15 0 R
@@ -2319,7 +2319,7 @@ endobj
 <<
   /Title  (U11 display_Mode_Select_Mux)
   /C      [0.0 0.0 0.4]
-  /Dest   [9 0 R /FitR 663 322 711 366]
+  /Dest   [9 0 R /FitR 507 408 544 441]
   /Parent 12 0 R
   /Prev   14 0 R
   /Next   16 0 R
@@ -2329,7 +2329,7 @@ endobj
 <<
   /Title  (U12 clkDiv100to500)
   /C      [0.0 0.0 0.4]
-  /Dest   [9 0 R /FitR 76 304 111 325]
+  /Dest   [9 0 R /FitR 65 394 91 410]
   /Parent 12 0 R
   /Prev   15 0 R
   /Next   17 0 R
@@ -2339,7 +2339,7 @@ endobj
 <<
   /Title  (U13 seg7_mux)
   /C      [0.0 0.0 0.4]
-  /Dest   [9 0 R /FitR 662 275 715 313]
+  /Dest   [9 0 R /FitR 507 372 547 401]
   /Parent 12 0 R
   /Prev   16 0 R
   /Next   18 0 R
@@ -2349,7 +2349,7 @@ endobj
 <<
   /Title  (U14 clkDiv100to500)
   /C      [0.0 0.0 0.4]
-  /Dest   [9 0 R /FitR 582 234 618 255]
+  /Dest   [9 0 R /FitR 447 341 473 357]
   /Parent 12 0 R
   /Prev   17 0 R
   /Next   19 0 R
@@ -2359,7 +2359,7 @@ endobj
 <<
   /Title  (U15 debounce)
   /C      [0.0 0.0 0.4]
-  /Dest   [9 0 R /FitR 131 304 176 331]
+  /Dest   [9 0 R /FitR 106 394 140 415]
   /Parent 12 0 R
   /Prev   18 0 R
   /Next   20 0 R
@@ -2369,7 +2369,7 @@ endobj
 <<
   /Title  (U2 ALU)
   /C      [0.0 0.0 0.4]
-  /Dest   [9 0 R /FitR 363 298 413 337]
+  /Dest   [9 0 R /FitR 281 390 319 419]
   /Parent 12 0 R
   /Prev   19 0 R
   /Next   21 0 R
@@ -2379,7 +2379,7 @@ endobj
 <<
   /Title  (U3 regA)
   /C      [0.0 0.0 0.4]
-  /Dest   [9 0 R /FitR 294 345 330 378]
+  /Dest   [9 0 R /FitR 229 425 256 450]
   /Parent 12 0 R
   /Prev   20 0 R
   /Next   22 0 R
@@ -2389,7 +2389,7 @@ endobj
 <<
   /Title  (U4 regB)
   /C      [0.0 0.0 0.4]
-  /Dest   [9 0 R /FitR 294 304 330 337]
+  /Dest   [9 0 R /FitR 229 394 256 419]
   /Parent 12 0 R
   /Prev   21 0 R
   /Next   23 0 R
@@ -2399,7 +2399,7 @@ endobj
 <<
   /Title  (U5 regG)
   /C      [0.0 0.0 0.4]
-  /Dest   [9 0 R /FitR 446 286 482 319]
+  /Dest   [9 0 R /FitR 344 381 371 406]
   /Parent 12 0 R
   /Prev   22 0 R
   /Next   24 0 R
@@ -2409,7 +2409,7 @@ endobj
 <<
   /Title  (U6 regO)
   /C      [0.0 0.0 0.4]
-  /Dest   [9 0 R /FitR 294 263 330 296]
+  /Dest   [9 0 R /FitR 229 363 256 388]
   /Parent 12 0 R
   /Prev   23 0 R
   /Next   25 0 R
@@ -2419,7 +2419,7 @@ endobj
 <<
   /Title  (U7 BIN2BCD)
   /C      [0.0 0.0 0.4]
-  /Dest   [9 0 R /FitR 512 292 561 313]
+  /Dest   [9 0 R /FitR 393 386 430 401]
   /Parent 12 0 R
   /Prev   24 0 R
   /Next   26 0 R
@@ -2429,7 +2429,7 @@ endobj
 <<
   /Title  (U8 seg7)
   /C      [0.0 0.0 0.4]
-  /Dest   [9 0 R /FitR 580 304 626 325]
+  /Dest   [9 0 R /FitR 444 394 480 410]
   /Parent 12 0 R
   /Prev   25 0 R
   /Next   27 0 R
@@ -2439,7 +2439,7 @@ endobj
 <<
   /Title  (U9 seg7)
   /C      [0.0 0.0 0.4]
-  /Dest   [9 0 R /FitR 580 281 626 302]
+  /Dest   [9 0 R /FitR 444 377 480 393]
   /Parent 12 0 R
   /Prev   26 0 R
 >>
@@ -2460,7 +2460,7 @@ endobj
 <<
   /Title  (BTNC input)
   /C      [0.0 0.0 0.4]
-  /Dest   [9 0 R /FitR 44 327 61 331]
+  /Dest   [9 0 R /FitR 40 411 53 415]
   /Parent 28 0 R
   /Next   30 0 R
 >>
@@ -2469,7 +2469,7 @@ endobj
 <<
   /Title  (CA output)
   /C      [0.0 0.0 0.4]
-  /Dest   [9 0 R /FitR 733 280 746 284]
+  /Dest   [9 0 R /FitR 561 376 570 380]
   /Parent 28 0 R
   /Prev   29 0 R
   /Next   31 0 R
@@ -2479,7 +2479,7 @@ endobj
 <<
   /Title  (CB output)
   /C      [0.0 0.0 0.4]
-  /Dest   [9 0 R /FitR 733 286 746 290]
+  /Dest   [9 0 R /FitR 561 380 570 384]
   /Parent 28 0 R
   /Prev   30 0 R
   /Next   32 0 R
@@ -2489,7 +2489,7 @@ endobj
 <<
   /Title  (CC output)
   /C      [0.0 0.0 0.4]
-  /Dest   [9 0 R /FitR 733 274 746 279]
+  /Dest   [9 0 R /FitR 561 372 570 375]
   /Parent 28 0 R
   /Prev   31 0 R
   /Next   33 0 R
@@ -2499,7 +2499,7 @@ endobj
 <<
   /Title  (CD output)
   /C      [0.0 0.0 0.4]
-  /Dest   [9 0 R /FitR 733 268 746 273]
+  /Dest   [9 0 R /FitR 561 367 570 371]
   /Parent 28 0 R
   /Prev   32 0 R
   /Next   34 0 R
@@ -2509,7 +2509,7 @@ endobj
 <<
   /Title  (CE output)
   /C      [0.0 0.0 0.4]
-  /Dest   [9 0 R /FitR 733 262 746 267]
+  /Dest   [9 0 R /FitR 561 363 570 366]
   /Parent 28 0 R
   /Prev   33 0 R
   /Next   35 0 R
@@ -2519,7 +2519,7 @@ endobj
 <<
   /Title  (CF output)
   /C      [0.0 0.0 0.4]
-  /Dest   [9 0 R /FitR 733 256 745 261]
+  /Dest   [9 0 R /FitR 561 358 570 362]
   /Parent 28 0 R
   /Prev   34 0 R
   /Next   36 0 R
@@ -2529,7 +2529,7 @@ endobj
 <<
   /Title  (CG output)
   /C      [0.0 0.0 0.4]
-  /Dest   [9 0 R /FitR 733 250 746 255]
+  /Dest   [9 0 R /FitR 561 354 570 358]
   /Parent 28 0 R
   /Prev   35 0 R
   /Next   37 0 R
@@ -2539,7 +2539,7 @@ endobj
 <<
   /Title  (CLK100MHZ input)
   /C      [0.0 0.0 0.4]
-  /Dest   [9 0 R /FitR 33 309 61 314]
+  /Dest   [9 0 R /FitR 32 398 53 402]
   /Parent 28 0 R
   /Prev   36 0 R
 >>
@@ -2561,7 +2561,7 @@ endobj
 <<
   /Title  (AN output)
   /C      [0.0 0.0 0.4]
-  /Dest   [9 0 R /FitR 733 291 753 297]
+  /Dest   [9 0 R /FitR 560 384 575 389]
   /Parent 38 0 R
   /Next   40 0 R
 >>
@@ -2570,7 +2570,7 @@ endobj
 <<
   /Title  (LED output)
   /C      [0.0 0.0 0.4]
-  /Dest   [9 0 R /FitR 733 344 757 349]
+  /Dest   [9 0 R /FitR 560 424 578 429]
   /Parent 38 0 R
   /Prev   39 0 R
   /Next   41 0 R
@@ -2580,7 +2580,7 @@ endobj
 <<
   /Title  (SW input)
   /C      [0.0 0.0 0.4]
-  /Dest   [9 0 R /FitR 41 285 62 291]
+  /Dest   [9 0 R /FitR 38 380 53 384]
   /Parent 38 0 R
   /Prev   40 0 R
 >>
@@ -2602,7 +2602,7 @@ endobj
 <<
   /Title  (BTNC)
   /C      [0.0 0.0 0.4]
-  /Dest   [9 0 R /FitR 60 317 137 329]
+  /Dest   [9 0 R /FitR 53 404 110 413]
   /Parent 42 0 R
   /Next   44 0 R
 >>
@@ -2611,7 +2611,7 @@ endobj
 <<
   /Title  (CLK100MHZ)
   /C      [0.0 0.0 0.4]
-  /Dest   [9 0 R /FitR 60 241 588 364]
+  /Dest   [9 0 R /FitR 53 347 451 440]
   /Parent 42 0 R
   /Prev   43 0 R
   /Next   45 0 R
@@ -2621,7 +2621,7 @@ endobj
 <<
   /Title  (clkDiv100to500_wire)
   /C      [0.0 0.0 0.4]
-  /Dest   [9 0 R /FitR 611 241 673 300]
+  /Dest   [9 0 R /FitR 468 347 515 391]
   /Parent 42 0 R
   /Prev   44 0 R
   /Next   46 0 R
@@ -2631,7 +2631,7 @@ endobj
 <<
   /Title  (debounce_button_out_wire)
   /C      [0.0 0.0 0.4]
-  /Dest   [9 0 R /FitR 160 317 204 317]
+  /Dest   [9 0 R /FitR 128 404 161 404]
   /Parent 42 0 R
   /Prev   45 0 R
   /Next   47 0 R
@@ -2641,7 +2641,7 @@ endobj
 <<
   /Title  (debounce_clk_in_wire)
   /C      [0.0 0.0 0.4]
-  /Dest   [9 0 R /FitR 105 311 137 311]
+  /Dest   [9 0 R /FitR 86 400 110 400]
   /Parent 42 0 R
   /Prev   46 0 R
   /Next   48 0 R
@@ -2651,7 +2651,7 @@ endobj
 <<
   /Title  (fsm_enableA_out_wire)
   /C      [0.0 0.0 0.4]
-  /Dest   [9 0 R /FitR 227 317 301 353]
+  /Dest   [9 0 R /FitR 178 404 234 431]
   /Parent 42 0 R
   /Prev   47 0 R
   /Next   49 0 R
@@ -2661,7 +2661,7 @@ endobj
 <<
   /Title  (fsm_enableB_out_wire)
   /C      [0.0 0.0 0.4]
-  /Dest   [9 0 R /FitR 228 311 301 311]
+  /Dest   [9 0 R /FitR 179 400 234 400]
   /Parent 42 0 R
   /Prev   48 0 R
   /Next   50 0 R
@@ -2671,7 +2671,7 @@ endobj
 <<
   /Title  (fsm_enableG_out_wire)
   /C      [0.0 0.0 0.4]
-  /Dest   [9 0 R /FitR 227 288 453 306]
+  /Dest   [9 0 R /FitR 178 382 349 396]
   /Parent 42 0 R
   /Prev   49 0 R
   /Next   51 0 R
@@ -2681,7 +2681,7 @@ endobj
 <<
   /Title  (fsm_enableO_out_wire)
   /C      [0.0 0.0 0.4]
-  /Dest   [9 0 R /FitR 227 270 301 300]
+  /Dest   [9 0 R /FitR 178 369 234 391]
   /Parent 42 0 R
   /Prev   50 0 R
 >>
@@ -2703,7 +2703,7 @@ endobj
 <<
   /Title  (@AN)
   /C      [0.0 0.0 0.4]
-  /Dest   [9 0 R /FitR 696 294 734 294]
+  /Dest   [9 0 R /FitR 532 387 561 387]
   /Parent 52 0 R
   /Next   54 0 R
 >>
@@ -2712,7 +2712,7 @@ endobj
 <<
   /Title  (@CA,CB,CC,CD,CE,CF,CG)
   /C      [0.0 0.0 0.4]
-  /Dest   [9 0 R /FitR 696 250 734 290]
+  /Dest   [9 0 R /FitR 532 354 561 384]
   /Parent 52 0 R
   /Prev   53 0 R
   /Next   55 0 R
@@ -2722,7 +2722,7 @@ endobj
 <<
   /Title  (@LED)
   /C      [0.0 0.0 0.4]
-  /Dest   [9 0 R /FitR 696 338 734 349]
+  /Dest   [9 0 R /FitR 532 420 561 428]
   /Parent 52 0 R
   /Prev   54 0 R
   /Next   56 0 R
@@ -2732,7 +2732,7 @@ endobj
 <<
   /Title  (@SW)
   /C      [0.0 0.0 0.4]
-  /Dest   [9 0 R /FitR 61 274 302 359]
+  /Dest   [9 0 R /FitR 53 372 235 436]
   /Parent 52 0 R
   /Prev   55 0 R
   /Next   57 0 R
@@ -2742,7 +2742,7 @@ endobj
 <<
   /Title  (@bin_to_bcd_wire)
   /C      [0.0 0.0 0.4]
-  /Dest   [9 0 R /FitR 549 262 587 314]
+  /Dest   [9 0 R /FitR 422 363 450 402]
   /Parent 52 0 R
   /Prev   56 0 R
   /Next   58 0 R
@@ -2752,7 +2752,7 @@ endobj
 <<
   /Title  (@fsm_display_mode_out_wire)
   /C      [0.0 0.0 0.4]
-  /Dest   [9 0 R /FitR 227 322 673 341]
+  /Dest   [9 0 R /FitR 178 408 515 423]
   /Parent 52 0 R
   /Prev   57 0 R
   /Next   59 0 R
@@ -2762,7 +2762,7 @@ endobj
 <<
   /Title  (@regA_out_wire)
   /C      [0.0 0.0 0.4]
-  /Dest   [9 0 R /FitR 323 322 672 359]
+  /Dest   [9 0 R /FitR 251 408 514 436]
   /Parent 52 0 R
   /Prev   58 0 R
   /Next   60 0 R
@@ -2772,7 +2772,7 @@ endobj
 <<
   /Title  (@regB_out_wire)
   /C      [0.0 0.0 0.4]
-  /Dest   [9 0 R /FitR 324 316 673 347]
+  /Dest   [9 0 R /FitR 252 403 515 427]
   /Parent 52 0 R
   /Prev   59 0 R
   /Next   61 0 R
@@ -2782,7 +2782,7 @@ endobj
 <<
   /Title  (@regG_in_wire)
   /C      [0.0 0.0 0.4]
-  /Dest   [9 0 R /FitR 402 299 454 318]
+  /Dest   [9 0 R /FitR 311 390 349 405]
   /Parent 52 0 R
   /Prev   60 0 R
   /Next   62 0 R
@@ -2792,7 +2792,7 @@ endobj
 <<
   /Title  (@regG_out_wire)
   /C      [0.0 0.0 0.4]
-  /Dest   [9 0 R /FitR 476 298 673 341]
+  /Dest   [9 0 R /FitR 366 390 515 423]
   /Parent 52 0 R
   /Prev   61 0 R
   /Next   63 0 R
@@ -2802,7 +2802,7 @@ endobj
 <<
   /Title  (@regO_out_wire)
   /C      [0.0 0.0 0.4]
-  /Dest   [9 0 R /FitR 323 275 673 336]
+  /Dest   [9 0 R /FitR 251 373 515 418]
   /Parent 52 0 R
   /Prev   62 0 R
   /Next   64 0 R
@@ -2812,7 +2812,7 @@ endobj
 <<
   /Title  (@seg7_mux_wire1)
   /C      [0.0 0.0 0.4]
-  /Dest   [9 0 R /FitR 610 293 673 312]
+  /Dest   [9 0 R /FitR 467 386 515 401]
   /Parent 52 0 R
   /Prev   63 0 R
   /Next   65 0 R
@@ -2822,7 +2822,7 @@ endobj
 <<
   /Title  (@seg7_mux_wire2)
   /C      [0.0 0.0 0.4]
-  /Dest   [9 0 R /FitR 611 288 672 288]
+  /Dest   [9 0 R /FitR 468 382 514 382]
   /Parent 52 0 R
   /Prev   64 0 R
   /Next   66 0 R
@@ -2832,7 +2832,7 @@ endobj
 <<
   /Title  (@seg7_mux_wire3)
   /C      [0.0 0.0 0.4]
-  /Dest   [9 0 R /FitR 610 264 673 283]
+  /Dest   [9 0 R /FitR 467 364 515 378]
   /Parent 52 0 R
   /Prev   65 0 R
 >>
@@ -2877,20 +2877,20 @@ xref
 0000000000 65535 f 
 0000000009 00000 n 
 0000000207 00000 n 
-0000021474 00000 n 
+0000021475 00000 n 
 0000000357 00000 n 
 0000000484 00000 n 
 0000000632 00000 n 
-0000030534 00000 n 
-0000030513 00000 n 
-0000000755 00000 n 
-0000000897 00000 n 
-0000030356 00000 n 
+0000030533 00000 n 
+0000030512 00000 n 
+0000000756 00000 n 
+0000000896 00000 n 
+0000030355 00000 n 
 0000023948 00000 n 
-0000021574 00000 n 
-0000021713 00000 n 
-0000021871 00000 n 
-0000022048 00000 n 
+0000021575 00000 n 
+0000021714 00000 n 
+0000021872 00000 n 
+0000022049 00000 n 
 0000022215 00000 n 
 0000022377 00000 n 
 0000022545 00000 n 
@@ -2916,31 +2916,31 @@ xref
 0000025682 00000 n 
 0000025824 00000 n 
 0000025984 00000 n 
-0000027770 00000 n 
+0000027769 00000 n 
 0000026300 00000 n 
 0000026436 00000 n 
 0000026594 00000 n 
 0000026763 00000 n 
 0000026937 00000 n 
-0000027107 00000 n 
-0000027277 00000 n 
-0000027447 00000 n 
-0000027617 00000 n 
-0000030194 00000 n 
-0000027942 00000 n 
-0000028078 00000 n 
-0000028249 00000 n 
-0000028403 00000 n 
-0000028555 00000 n 
-0000028721 00000 n 
-0000028897 00000 n 
-0000029061 00000 n 
-0000029225 00000 n 
-0000029388 00000 n 
-0000029552 00000 n 
-0000029716 00000 n 
-0000029881 00000 n 
-0000030046 00000 n 
+0000027106 00000 n 
+0000027276 00000 n 
+0000027446 00000 n 
+0000027616 00000 n 
+0000030193 00000 n 
+0000027941 00000 n 
+0000028077 00000 n 
+0000028248 00000 n 
+0000028402 00000 n 
+0000028554 00000 n 
+0000028720 00000 n 
+0000028896 00000 n 
+0000029060 00000 n 
+0000029224 00000 n 
+0000029387 00000 n 
+0000029551 00000 n 
+0000029715 00000 n 
+0000029880 00000 n 
+0000030045 00000 n 
 trailer
 <<
   /Size 67
@@ -2948,5 +2948,5 @@ trailer
   /Root 2 0 R
 >>
 startxref
-30616
+30615
 %%EOF
