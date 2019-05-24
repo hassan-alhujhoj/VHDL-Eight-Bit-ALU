@@ -33,10 +33,10 @@ architecture behavioural of ALU is
 			begin
 			    if (clk'event and clk = '1') then
                     case opcode_in is
-                        when "00" => result <= A + B;
-                        when "01" => result <= A - B;
-                        when "10" => result <= A AND B;
-                        when others => result <= A OR B;
+                        when "00" => result <= A + B;   -- When opcode is "00" do addition
+                        when "01" => result <= A - B;   -- When opcode is "01" do subtraction
+                        when "10" => result <= A AND B; -- When opcode is "10" do bitwise AND
+                        when others => result <= A OR B;    -- When opcode is "11" do bitwise OR
                     end case;
 				end if;
 		end process acc;
