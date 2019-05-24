@@ -1,41 +1,28 @@
 ----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
+-- Academic Institution: University of Canterbury. 
+-- Engineer: Hassan Alhujhoj (haa61), Jin Su Kim (jsk71), Abdullah Naeem (ana104)
 -- 
--- Create Date: 23.05.2019 10:14:16
--- Design Name: 
--- Module Name: debounce_tb - Behavioral
--- Project Name: 
--- Target Devices: 
--- Tool Versions: 
--- Description: 
+-- Create Date: 24.05.2019 15:15:15
+-- Design Name: VHDL programming
+-- Module Name: debounce_tb - behavioural
+-- Project Name: ALU + FSM + REG Project
+-- Target Devices: Nexys 4 DDR Artix-7 FPGA
+-- Tool Versions: VHDL Vivado
+-- Description: This module is a register that saves an 8-bit binary number at a rising edge of the clock and after the enable is equal
+-- to one. Otherwise, if enable = 0, no operand is saved.
 -- 
--- Dependencies: 
--- 
--- Revision:
--- Revision 0.01 - File Created
--- Additional Comments:
--- 
-----------------------------------------------------------------------------------
+-- Revision: Code has been revised by all three designers, Hassan A, Jin K, and Abdullah N (24/05/2019).
 
+----------------------------------------------------------------------------------
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
-
--- Uncomment the following library declaration if instantiating
--- any Xilinx leaf cells in this code.
---library UNISIM;
---use UNISIM.VComponents.all;
 
 entity debounce_tb is
 --  Port ( );
 end debounce_tb;
 
-architecture Behavioral of debounce_tb is
+architecture behavioural of debounce_tb is
 
     component debounce 
         Port ( button : in STD_LOGIC;
@@ -123,4 +110,4 @@ begin
         
    end process io_process;
 
-end Behavioral;
+end behavioural;
