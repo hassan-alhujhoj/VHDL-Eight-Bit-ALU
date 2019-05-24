@@ -1,35 +1,21 @@
 ----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
+-- Academic Institution: University of Canterbury. 
+-- Engineer: Hassan Alhujhoj (haa61), Jin Su Kim (jsk71), Abdullah Naeem (ana104)
 -- 
--- Create Date: 13.05.2019 16:18:56
--- Design Name: 
--- Module Name: debounce - Behavioral
--- Project Name: 
--- Target Devices: 
--- Tool Versions: 
--- Description: 
+-- Create Date: 22.05.2019 10:49:33
+-- Design Name: VHDL programming
+-- Module Name: debounce - behavioural
+-- Project Name: ALU + FSM + REG Project
+-- Target Devices: Nexys 4 DDR Artix-7 FPGA
+-- Tool Versions: VHDL Vivado
+-- Description: This code implements a debouncer module that reduces the effects of button debounging.
 -- 
--- Dependencies: 
--- 
--- Revision:
--- Revision 0.01 - File Created
--- Additional Comments:
--- 
-----------------------------------------------------------------------------------
+-- Revision: Code has been revised by all three designers, Hassan A, Jin K, and Abdullah N (24/05/2019).
 
+----------------------------------------------------------------------------------
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
-
--- Uncomment the following library declaration if instantiating
--- any Xilinx leaf cells in this code.
---library UNISIM;
---use UNISIM.VComponents.all;
 
 entity debounce is
     Port ( button : in STD_LOGIC;

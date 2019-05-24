@@ -1,20 +1,31 @@
+----------------------------------------------------------------------------------
+-- Academic Institution: University of Canterbury. 
+-- Engineer: Hassan Alhujhoj (haa61), Jin Su Kim (jsk71), Abdullah Naeem (ana104)
+-- 
+-- Create Date: 24.05.2019 13:02:01
+-- Design Name: VHDL programming
+-- Module Name: BIN2BCD - COMBINATIONAL
+-- Project Name: ALU + FSM + REG Project
+-- Target Devices: Nexys 4 DDR Artix-7 FPGA
+-- Tool Versions: VHDL Vivado
+-- Description: This module converts a 8-bit binary number into a a 12-bit BCD number.
+-- 
+-- Revision: Code has been revised by all three designers, Hassan A, Jin K, and Abdullah N (24/05/2019).
+
+----------------------------------------------------------------------------------
+
 library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.std_logic_arith.all;
 use IEEE.std_logic_unsigned.all;
 
-
-<<<<<<< HEAD
--- The reference for the following code can be accessed from this link: https://groups.google.com/forum/#!topic/comp.lang.vhdl/G34FmzBd7v0
-=======
 -- The reference for the following code can be accessed from this link: https://groups.google.com/d/msg/comp.lang.vhdl/G34FmzBd7v0/qVorUhitSRUJ
->>>>>>> aa15a04b2125ff8008bfe0a483b41b7d59fc7712
 entity BIN2BCD is 
   port (BINARY    : in std_logic_vector(7 downto 0);  -- range 0 to 255
 		BCD       : out std_logic_vector(11 downto 0));
 end BIN2BCD;
 
-architecture COMB of BIN2BCD is
+architecture COMBINATIONAL of BIN2BCD is
 
 signal BIN2INT      : integer range 0 to 255;
 signal HUNDREDS     : integer range 0 to 2;
@@ -78,4 +89,4 @@ begin
  UNIT_S   <= UNIT_VAR;
 
 end process CONVERSION;
-end COMB;
+end COMBINATIONAL;

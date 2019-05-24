@@ -1,3 +1,22 @@
+----------------------------------------------------------------------------------
+-- Academic Institution: University of Canterbury. 
+-- Engineer: Hassan Alhujhoj (haa61), Jin Su Kim (jsk71), Abdullah Naeem (ana104)
+-- 
+-- Create Date: 24.05.2019 13:02:01
+-- Design Name: VHDL programming
+-- Module Name: main - Structural
+-- Project Name: ALU + FSM + REG Project
+-- Target Devices: Nexys 4 DDR Artix-7 FPGA
+-- Tool Versions: VHDL Vivado
+-- Description: This Structural code implement an ALU that can perform add, subreact, bitwise AND, and bitwise OR operations using two 8-bit operands and output a 8-bit operand.
+-- The ALU's opcode depends on the FSM enable values that is sent into each register. The input operand will be saved into register A and register B, and
+-- the opcode will be saved to register O. The output operand of the ALU will be saved into register G. The FSM role is to its state using the central button.
+-- The four states are enter operand A, enter operand B, enter opecode and finally display the mode of FSM. 
+-- 
+-- Revision: Code has been revised by all three designers, Hassan A, Jin K, and Abdullah N (24/05/2019).
+
+----------------------------------------------------------------------------------
+
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_ARITH.ALL;
@@ -13,7 +32,7 @@ ENTITY main IS
 		LED 							      : out STD_LOGIC_VECTOR(15 downto 0));
 END main;
 
-ARCHITECTURE BEHAVIOUR OF main is
+ARCHITECTURE Structural OF main is
 	
 	signal fsm_opcode_out_wire : STD_LOGIC_VECTOR(1 downto 0);
 	signal fsm_display_mode_out_wire : STD_LOGIC_VECTOR(1 downto 0);	
@@ -73,4 +92,4 @@ ARCHITECTURE BEHAVIOUR OF main is
             port map (clk_in => CLK100MHZ, clk_out => clkDiv100to500_wire);
         U15: entity work.debounce
             port map(button => BTNC, clk => debounce_clk_in_wire, debounce_out => debounce_button_out_wire);
-END BEHAVIOUR;
+END Structural;

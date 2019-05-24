@@ -1,3 +1,19 @@
+----------------------------------------------------------------------------------
+-- Academic Institution: University of Canterbury. 
+-- Engineer: Hassan Alhujhoj (haa61), Jin Su Kim (jsk71), Abdullah Naeem (ana104)
+-- 
+-- Create Date: 23.05.2019 12:16:15
+-- Design Name: VHDL programming
+-- Module Name: seg7 - behavioural
+-- Project Name: ALU + FSM + REG Project
+-- Target Devices: Nexys 4 DDR Artix-7 FPGA
+-- Tool Versions: VHDL Vivado
+-- Description: This module is used to display decimal number between 0 and 9 using a 4-bit BCD code.
+-- 
+-- Revision: Code has been revised by all three designers, Hassan A, Jin K, and Abdullah N (24/05/2019).
+
+----------------------------------------------------------------------------------
+
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
@@ -6,7 +22,7 @@ entity seg7 is
           seg7_out    : out STD_LOGIC_VECTOR(6 downto 0));
 end seg7;
 
-architecture Behavioral of seg7 is
+architecture behavioural of seg7 is
     signal segments_out : STD_LOGIC_VECTOR (6 downto 0);
     begin
         seven_segment_process: process(bcd)
@@ -26,4 +42,4 @@ architecture Behavioral of seg7 is
                 end case;
             end process seven_segment_process; 
     seg7_out <= segments_out;
-end Behavioral;
+end behavioural;

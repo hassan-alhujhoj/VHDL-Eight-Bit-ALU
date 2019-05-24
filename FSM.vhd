@@ -1,3 +1,19 @@
+----------------------------------------------------------------------------------
+-- Academic Institution: University of Canterbury. 
+-- Engineer: Hassan Alhujhoj (haa61), Jin Su Kim (jsk71), Abdullah Naeem (ana104)
+-- 
+-- Create Date: 24.05.2019 13:30:06
+-- Design Name: VHDL programming
+-- Module Name: FSM - behavioural
+-- Project Name: ALU + FSM + REG Project
+-- Target Devices: Nexys 4 DDR Artix-7 FPGA
+-- Tool Versions: VHDL Vivado
+-- Description: This module converts a 8-bit binary number into a a 12-bit BCD number.
+-- 
+-- Revision: Code has been revised by all three designers, Hassan A, Jin K, and Abdullah N (24/05/2019).
+
+----------------------------------------------------------------------------------
+
 library ieee;
 use ieee.std_logic_1164.all;
 
@@ -13,7 +29,7 @@ entity FSM is
         display_Mode                            : out STD_LOGIC_VECTOR(1 downto 0));
 end FSM;
 
-Architecture behaviour of FSM is
+Architecture behavioural of FSM is
 	type state_type is (s0, s1, s2, s3); 	-- four state machine
 	signal current_s, next_s : state_type; 	-- current and next state declaration
 	signal prev_button : std_logic;
@@ -68,4 +84,4 @@ Architecture behaviour of FSM is
                 prev_button <= buttonC;
             end if;
         end process;
-end behaviour;
+end behavioural;
