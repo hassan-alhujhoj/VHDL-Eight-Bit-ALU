@@ -21,10 +21,10 @@ use IEEE.STD_LOGIC_ARITH.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 entity ALU is
-    port(opcode_in  : in STD_LOGIC_VECTOR(1 downto 0);
-        clk         : in std_logic;
-        A, B        : in std_logic_vector(7 downto 0);
-        result      : out std_logic_vector(7 downto 0));
+    port(opcode_in  : in STD_LOGIC_VECTOR(1 downto 0);  -- opcode received from regO
+        clk         : in std_logic;                     -- CLK100MHZ clock
+        A, B        : in std_logic_vector(7 downto 0);  -- operand A and B received from the regA and regB
+        result      : out std_logic_vector(7 downto 0));-- ALU result which is sent to be saved on regG
 end ALU;
 
 architecture behavioural of ALU is
