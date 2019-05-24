@@ -8,8 +8,7 @@
 -- Project Name: ALU + FSM + REG Project
 -- Target Devices: Nexys 4 DDR Artix-7 FPGA
 -- Tool Versions: VHDL Vivado
--- Description: This module is a register that saves an 8-bit binary number at a rising edge of the clock and after the enable is equal
--- to one. Otherwise, if enable = 0, no operand is saved.
+-- Description: This module is testbench file. It test the debounce.vhd file by siluating it and obtaining the result with out using the FPGA board.
 -- 
 -- Revision: Code has been revised by all three designers, Hassan A, Jin K, and Abdullah N (24/05/2019).
 
