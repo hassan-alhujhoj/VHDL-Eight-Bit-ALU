@@ -20,7 +20,6 @@ use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_ARITH.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
-
 entity seg7_mux is
 	port(clk		: in std_logic;
 		digit1		: in std_logic_vector(6 downto 0);
