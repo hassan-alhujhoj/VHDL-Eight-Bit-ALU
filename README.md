@@ -1,5 +1,7 @@
 # ENEL373 - The ALU + FSM + REG project
 Operand A is first entered, followed by operand B and lastly by OpCode. Switches used to enterd the operands and opcode. Center button used transition to the next state. OpCode operators are represented by: '00' means mathematical operator '+', '01' means mathematical operator '-', '10' means logical operator 'AND' and '11' means logical operator 'OR'. Switches represent binary values with most right switch being LSB and most left switch being MSB. OpCode operators are reserved to the first LSB bits and the last two MSB LEDs represent the FSM state that's being entered. The FSM has five states: Operand A, Operand B, Operand O, Operand G and reset. Operand A and B represent the integers, Operand O represnt the OpCode and Operand G represent the output. The seven-segment decoder outputs the state that has been entered after pressing the center button or transitioning to the next FSM state.
+## Schematic
+<img src="wiki/schematic.PNG" alt="Schematic" width="500"/>
 
 ## Examples:
 #### Example 1: Operand A = 16, Operand B = 8, Operand O = '+'
