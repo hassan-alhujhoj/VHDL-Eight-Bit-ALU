@@ -24,7 +24,6 @@ entity regG is
     port(D            : in std_logic_vector(n-1 downto 0);
         Clk           : in std_logic;
         enable        : in std_logic;
-        state         : out std_logic;
         Q             : out std_logic_vector(n-1 downto 0));
 end regG;
 
