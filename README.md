@@ -27,7 +27,7 @@ The FSM operand input values are entered using the switches of the Nexys 4 DDR A
 - clk
 - enable
 
-> #### RegisterB
+#### RegisterB
 - opreand B
 - clk
 - enable
