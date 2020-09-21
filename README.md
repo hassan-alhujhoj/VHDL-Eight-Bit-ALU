@@ -1,5 +1,5 @@
 # ENEL373 - The ALU + FSM + REG project
-
+![Video](wiki/demo1.gif)![Video](wiki/demo2.gif)![Video](wiki/demo3.gif)![Video](wiki/demo4.gif)
 
 ## Objectives of The Project
 The objective of this project is to design an ALU component that can add, subtract, and perform bitwise AND or OR depending on the opcode/operation provided to the ALU.
@@ -12,17 +12,17 @@ The FSM operand input values are entered using the switches of the Nexys 4 DDR A
 
 ## Inputs
 
-> #### FSM inputs
+#### FSM inputs
 - buttonC
 - clk
 
-> #### ALU inputs
+#### ALU inputs
 - opreand A
 - operand B
 - opcode
 - clk
 
-> #### RegisterA
+#### RegisterA
 - opreand A
 - clk
 - enable
@@ -32,88 +32,88 @@ The FSM operand input values are entered using the switches of the Nexys 4 DDR A
 - clk
 - enable
 
-> #### RegisterG
+#### RegisterG
 - opreand G
 - clk
 - enable
 
-> #### RegisterO
+#### RegisterO
 - opreand O
 - clk
 - enable
 
-> #### BIN2BCD
+#### BIN2BCD
 - opreand G
 
-> #### seg7 - U7
+#### seg7 - U7
 - bcd(3 downto 0)
 
-> #### seg7 - U8
+#### seg7 - U8
 - bcd(7 downto 4)
 
-> #### seg7 - U9
+#### seg7 - U9
 - bcd(11 downto 8)
 
-> #### display_Mode_Select_Mux
+#### display_Mode_Select_Mux
 - regA, regB, regG, regO
 - sel
 - clk
 
-> #### debounce
+#### debounce
 - button
 - clk
 
-> #### clkDiv100to500
+#### clkDiv100to500
 - clk_in
 
 ## Outputs
 
-> #### FSM output
+#### FSM output
 - enable_A, enable_b, enable_C, enable_O 
 - display_Mode
 
-> #### ALU output
+#### ALU output
 - result
 
-> #### RegisterA
+#### RegisterA
 - opreand A
 
-> #### RegisterB
+#### RegisterB
 - opreand B
 
-> #### RegisterG
+#### RegisterG
 - opreand G
 
-> #### RegisterO
+#### RegisterO
 - opreand O
 
-> #### BIN2BCD
+#### BIN2BCD
 - BCD code
 
-> #### seg7 - U7
+#### seg7 - U7
 - bcd(3 downto 0)
 
-> #### seg7 - U8
+#### seg7 - U8
 - bcd(7 downto 4)
 
-> #### seg7 - U9
+#### seg7 - U9
 - bcd(11 downto 8)
 
-> #### display_Mode_Select_Mux
+#### display_Mode_Select_Mux
 - led_out
 
-> #### debounce
+#### debounce
 - debounce_out
 
-> #### clkDiv100to500
+#### clkDiv100to500
 - clk_out
 
 ## Buttons
 
-> #### Center
+#### Center
 - Changes the state of the FSM and there are four states in total.
 
 ## Contributers
-> - Hassan Alhujhoj
-> - Abdullah Naeem 
-> - Jin Kim
+* Hassan Alhujhoj
+* Abdullah Naeem 
+* Jin Kim
