@@ -126,6 +126,6 @@ The FSM operand input values are entered using the switches of the Nexys 4 DDR A
 - Changes the state of the FSM and there are four states in total.
 
 ## Contributers
-* Hassan Alhujhoj
-* Abdullah Naeem 
-* Jin Kim
+* [Hassan Alhujhoj](https://github.com/hassan-alhujhoj)
+* [Abdullah Naeem]() 
+* [Jin Kim](https://github.com/JsaKim)
