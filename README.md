@@ -127,5 +127,5 @@ The FSM operand input values are entered using the switches of the Nexys 4 DDR A
 
 ## Contributers
 * [Hassan Alhujhoj](https://github.com/hassan-alhujhoj)
-* [Abdullah Naeem]() 
+* [Abdullah Naeem](https://github.com/ana104-collab)
 * [Jin Kim](https://github.com/JsaKim)
